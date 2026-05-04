@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilge Kütüphane — Spiritüel & Felsefe Rehberi</title>
+  <meta name="description" content="3568 kitabın özünden derlenen spiritüel, felsefe ve maneviyat yazıları. Budizm, tasavvuf, ezoterizm, psikoloji ve daha fazlası.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080611;
+      --bg2: #0e0b1a;
+      --bg3: #13102000;
+      --surface: #110e1f;
+      --surface2: #1a1630;
+      --border: #ffffff0d;
+      --border2: #ffffff18;
+      --gold: #c8a45a;
+      --gold2: #e8c87a;
+      --gold-dim: #c8a45a30;
+      --purple: #9b72cf;
+      --purple-dim: #9b72cf20;
+      --text: #ede8f5;
+      --text2: #a899c8;
+      --text3: #6b5e8a;
+      --text4: #3d3458;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Stars background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, #ffffff22 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 10%, #ffffff18 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 70%, #ffffff15 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 85%, #ffffff12 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 50%, #ffffff20 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 60%, #ffffff15 0%, transparent 100%),
+        radial-gradient(2px 2px at 50% 20%, #c8a45a15 0%, transparent 100%),
+        radial-gradient(2px 2px at 30% 90%, #9b72cf10 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #080611dd;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .nav-logo span { color: var(--text3); font-size: 18px; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--text3);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 2rem 4rem;
+      z-index: 1;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse at center, #9b72cf0a 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-mandala {
+      font-size: 52px;
+      margin-bottom: 2rem;
+      opacity: 0.85;
+      animation: breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text2);
+      max-width: 500px;
+      line-height: 1.8;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--text3);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .stat-div {
+      width: 1px;
+      height: 40px;
+      background: var(--border2);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text4);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* KATEGORILER */
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    /* Ana Kategori Kartları */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+
+    .cat-card {
+      background: var(--bg);
+      padding: 2rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .cat-card:hover { background: var(--surface); }
+    .cat-card:hover::before { transform: scaleX(1); }
+
+    .cat-icon {
+      font-size: 28px;
+      margin-bottom: 1rem;
+    }
+
+    .cat-name {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .cat-desc {
+      font-size: 13px;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+
+    .cat-subs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .sub-tag {
+      font-size: 10px;
+      padding: 3px 10px;
+      border: 1px solid var(--border2);
+      color: var(--text3);
+      letter-spacing: 0.05em;
+    }
+
+    .cat-count {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      color: var(--border2);
+    }
+
+    /* ÖRNEK MAKALE */
+    .makale-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .makale-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .makale-cat {
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .makale-cat::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .makale-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .makale-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .makale-meta {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text3);
+      letter-spacing: 0.1em;
+    }
+
+    .makale-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text2);
+    }
+
+    .makale-body p { margin-bottom: 1.8rem; }
+
+    .makale-body h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin: 3rem 0 1.5rem;
+    }
+
+    .makale-body blockquote {
+      border-left: 2px solid var(--gold);
+      padding: 1rem 0 1rem 2rem;
+      margin: 2.5rem 0;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--text);
+    }
+
+    .makale-body .highlight {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .kaynak-kutusu {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      padding: 1.5rem 2rem;
+      margin: 3rem 0;
+    }
+
+    .kaynak-baslik {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .kaynak-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .kaynak-list li {
+      font-size: 13px;
+      color: var(--text3);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .kaynak-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* DIVIDER */
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 18px;
+      opacity: 0.4;
+      margin: 2rem 0;
+      letter-spacing: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: var(--text4);
+      line-height: 1.8;
+    }
+
+    /* PAGE INDICATOR */
+    .page-indicator {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 50;
+    }
+
+    .page-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--border2);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .page-dot.active {
+      background: var(--gold);
+      height: 16px;
+      border-radius: 2px;
+    }
+
+    /* MAKALE SECTION SEPARATörü */
+    .section-sep {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .section-sep-line {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text4);
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .section-sep-line::before,
+    .section-sep-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border2), transparent);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-stats { gap: 1.5rem; }
+      .cat-grid { grid-template-columns: 1fr; }
+      .page-indicator { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <span>✦</span> BİLGE KÜTÜPHANE
+    </div>
+    <div class="nav-links">
+      <a href="#kategoriler">Kategoriler</a>
+      <a href="#makale">Yazılar</a>
+      <a href="#">Hakkında</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-mandala">🔯</div>
+    <div class="hero-eyebrow">Spiritüel · Felsefe · Bilgelik</div>
+    <h1 class="hero-title">
+      Kadim bilgeliğin<br><em>modern rehberi</em>
+    </h1>
+    <p class="hero-subtitle">
+      3.568 kitabın özünden derlenen yazılar. Budizm'den tasavvufa, ezoterizme, bilinç çalışmalarına — kendinizi ve evreni anlamak için bir kapı.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3.568</div>
+        <div class="stat-label">Kaynak Kitap</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Ana Kategori</div>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat-item">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Alt Başlık</div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      ↓ &nbsp; keşfet
+    </div>
+  </section>
+
+  <!-- KATEGORİLER -->
+  <section class="section" id="kategoriler">
+    <div class="section-header">
+      <div class="section-eyebrow">Ana Başlıklar</div>
+      <h2 class="section-title">Hangi kapıdan geçeceksin?</h2>
+    </div>
+
+    <div class="cat-grid">
+
+      <div class="cat-card">
+        <div class="cat-count">01</div>
+        <div class="cat-icon">🕉️</div>
+        <div class="cat-name">Maneviyat & Dinler</div>
+        <div class="cat-desc">Dünya'nın kadim inanç sistemleri, mistik gelenekler ve ruhsal öğretiler</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Budizm & Zen</span>
+          <span class="sub-tag">Hinduizm</span>
+          <span class="sub-tag">Şamanizm</span>
+          <span class="sub-tag">Tasavvuf</span>
+          <span class="sub-tag">Kabala</span>
+          <span class="sub-tag">Gnostisizm</span>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-count">02</div>
+        <div class="cat-icon">🌿</div>
+        <div class="cat-name">Bütüncül Sağlık & Şifa</div>
+        <div class="cat-desc">Beden, zihin ve ruh bütünlüğüne dayalı tüm şifa yolları ve terapötik yaklaşımlar</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Yoga & Meditasyon</span>
+          <span class="sub-tag">NLP</span>
+          <span class="sub-tag">EFT</span>
+          <span class="sub-tag">Hipnoterapi</span>
+          <span class="sub-tag">Reiki</span>
+          <span class="sub-tag">Travma</span>
+          <span class="sub-tag">Breathwork</span>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-count">03</div>
+        <div class="cat-icon">🧠</div>
+        <div class="cat-name">Zihin & Bilinç</div>
+        <div class="cat-desc">Psikoloji, bilinçaltı araştırmaları, kuantum bilinç ve insan zihninin sınırları</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Psikoloji</span>
+          <span class="sub-tag">Rüya</span>
+          <span class="sub-tag">Metafizik</span>
+          <span class="sub-tag">Kuantum</span>
+          <span class="sub-tag">Parapsikoloji</span>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-count">04</div>
+        <div class="cat-icon">🔮</div>
+        <div class="cat-name">Ezoterizm & Okült</div>
+        <div class="cat-desc">Gizli öğretiler, kadim semboller, kehanet sanatları ve sırın peşindekiler için</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Okültizm</span>
+          <span class="sub-tag">Astroloji</span>
+          <span class="sub-tag">Sembolizm</span>
+          <span class="sub-tag">Numeroloji</span>
+          <span class="sub-tag">Tarot</span>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-count">05</div>
+        <div class="cat-icon">🏛️</div>
+        <div class="cat-name">Tarih, Felsefe & Kültür</div>
+        <div class="cat-desc">Antik medeniyetler, büyük düşünürler, mitoloji ve insanlığın entelektüel mirası</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Antik Medeniyetler</span>
+          <span class="sub-tag">Felsefe</span>
+          <span class="sub-tag">Mitoloji</span>
+          <span class="sub-tag">Edebiyat</span>
+        </div>
+      </div>
+
+      <div class="cat-card">
+        <div class="cat-count">06</div>
+        <div class="cat-icon">🌱</div>
+        <div class="cat-name">Kişisel Dönüşüm & Yaşam</div>
+        <div class="cat-desc">Anlam arayışı, ilişkiler, bereket bilinci ve modern yaşamda iç dönüşüm</div>
+        <div class="cat-subs">
+          <span class="sub-tag">Kişisel Gelişim</span>
+          <span class="sub-tag">Bereket Bilinci</span>
+          <span class="sub-tag">İlişkiler</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAKALE SEPARATörü -->
+  <div class="section-sep">
+    <div class="section-sep-line">Örnek İçerik</div>
+  </div>
+
+  <!-- ÖRNEK MAKALE -->
+  <article class="makale-wrap" id="makale">
+
+    <div class="makale-header">
+      <div class="makale-cat">☯️ &nbsp; Budizm & Zen</div>
+      <h1 class="makale-title">
+        Aniçe: Her şeyin<br><em>geçiciliğini kucaklamak</em>
+      </h1>
+      <div class="makale-meta">
+        <span>12 dk okuma</span>
+        <span>·</span>
+        <span>14 kaynak kitap</span>
+        <span>·</span>
+        <span>Budizm'in temel öğretileri</span>
+      </div>
+    </div>
+
+    <div class="makale-body">
+
+      <p>
+        Sabah kahveni içerken masanın üzerindeki buharın yükselişini izledin mi hiç? O ince beyaz kıvrım — doğar, yükselir, dağılır. Saniyeler içinde. Ne kadar direnirsek direnelim, ne kadar tutmaya çalışırsak çalışalım, buhar gider.
+      </p>
+
+      <p>
+        Budizm buna bir isim koymuştur: <span class="highlight">Aniçe</span>. Pali dilinde "geçicilik" anlamına gelir. Ve Buda'nın öğretilerinin tam merkezinde durur — acının neden var olduğunu, neden tutunduğumuzu ve neden bırakmayı öğrenmemiz gerektiğini açıklayan temel gerçek.
+      </p>
+
+      <div class="ornament">· · ·</div>
+
+      <h2>Geçicilik neden bu kadar zor?</h2>
+
+      <p>
+        İnsan zihni, doğası gereği kalıcılık arar. Güzel bir anı dondurmak, sevdiğimiz insanları hep yanımızda tutmak, başarılarımızın sürmesini istiyoruz. Thich Nhat Hanh bunu şöyle açıklar: tutunma, bir şeyin gerçekte ne olduğunu görmemizi engeller. Güle tutunduğumuzda onu solmadan önce sevemeyiz; onu gerçekten göremeyiz.
+      </p>
+
+      <blockquote>
+        "Her şey geçicidir. Bunu anlayan kişi acının üzerinden geçer."
+        <br><small style="font-size:14px; color: var(--text3); font-style:normal; display:block; margin-top:8px;">— Dhammapada</small>
+      </blockquote>
+
+      <p>
+        Aniçe'yi anlamak teorik bir egzersiz değildir. Dalai Lama, geçiciliği kavramanın bizi daha merhametli yaptığını söyler — çünkü herkesin aynı kayıplarla, aynı bitişlerle karşılaştığını görürüz. Bu ortak kırılganlık bizi birbirine bağlar.
+      </p>
+
+      <h2>Üç işaret ve aniçe'nin yeri</h2>
+
+      <p>
+        Budizm'de varoluşun üç temel özelliği vardır: <span class="highlight">aniçe</span> (geçicilik), <span class="highlight">dukkha</span> (tatminsizlik) ve <span class="highlight">anatta</span> (bensizlik). Bu üçü birbirinden ayrılamaz. Geçiciliği görmeden tatminsizliğin kaynağını anlayamazsınız; tatminsizliği anlamadan bensizliğe ulaşamazsınız.
+      </p>
+
+      <p>
+        Zen geleneği bu anlayışı eylem üzerinden aktarır. Japon bahçelerindeki kum resimleri her sabah silinir ve yeniden çizilir. Sabah çizilen desen, akşama dek vardır — sonra gider. Bu ritüel, geçiciliği soyut bir kavram olmaktan çıkarır; gündelik yaşamın dokusuna işler.
+      </p>
+
+      <div class="ornament">· · ·</div>
+
+      <h2>Bırakmak, kaybetmek değildir</h2>
+
+      <p>
+        Batı zihninde "bırakmak" çoğunlukla vazgeçmek, yenilmek, kaybet­mek anlamına gelir. Aniçe öğretisi farklı bir şey söyler: bir şeyin geçici olduğunu kabul etmek, onu daha tam yaşamamızı sağlar. Solmakta olan gül, tam da o yüzden güzeldir.
+      </p>
+
+      <p>
+        Osho bunu kendi üslubuyla şöyle ifade eder: "Tutunma, aşk değildir. Gerçek aşk serbest bırakır." Bu paradoksal gibi görünür. Ama düşünün — en özgür hissettiğiniz anlar, genellikle bir şeye tutunmadığınız anlardır. Akışta olduğunuz anlar.
+      </p>
+
+      <h2>Pratikte aniçe</h2>
+
+      <p>
+        Farkındalık meditasyonu, aniçe'yi doğrudan deneyimlemenin en erişilebilir yoludur. Nefese odaklanırsınız — gelir, gider. Her nefes bir doğum ve bir ölüm. Düşünceler gelir, geçer. Bedensel duyumlar belirir, kaybolur. Oturarak izlediğinizde, geçiciliği zihinsel bir kavram olarak değil, canlı bir gerçek olarak görürsünüz.
+      </p>
+
+      <p>
+        Thich Nhat Hanh'ın "ölümlülük meditasyonu" dediği pratik bunu daha da derinleştirir: sevdiğiniz birini düşünün ve onun da geçici olduğunu hissederek nefes alın. Bu egzersiz, acı vermek için değil, o kişiyle geçirdiğiniz her anı daha gerçek kılmak içindir.
+      </p>
+
+      <div class="ornament">· · ·</div>
+
+      <p style="color: var(--text); font-style: italic;">
+        Sabah kahvenizdeki buharı bir daha izlediğinizde, belki bu kez ona direnmek yerine yükselişini takip edersiniz. Doğar. Yükselir. Dağılır. Ve tam o dağılışta — bir anlığına — her şeyin nasıl var olduğunu görürsünüz.
+      </p>
+
+      <div class="kaynak-kutusu">
+        <div class="kaynak-baslik">Bu yazıda yararlanılan kaynaklar</div>
+        <ul class="kaynak-list">
+          <li>Dhammapada (Buda'nın sözleri, MÖ 3. yüzyıl)</li>
+          <li>Thich Nhat Hanh — Farkındalığın Mucizesi</li>
+          <li>Thich Nhat Hanh — Farkına Var: İyileştiren Nefes</li>
+          <li>Dalai Lama — Yeni Binyılın Değerleri</li>
+          <li>Osho — Farkındalık: Dengeli Yaşamanın Anahtarı</li>
+          <li>Arnie Kozak — Herkes İçin Budizm 101</li>
+          <li>Alan W. Watts — Zen Yolu</li>
+        </ul>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">✦ BİLGE KÜTÜPHANE</div>
+    <p class="footer-text">
+      3.568 kitabın özünden derlenen spiritüel ve felsefe içerikleri.<br>
+      Her yazı gerçek kaynaklara dayandırılarak hazırlanmaktadır.
+    </p>
+  </footer>
+
+  <script>
+    // Smooth scroll için nav linkleri
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
