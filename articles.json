@@ -1,0 +1,17 @@
+[
+  {
+    "id": "anice",
+    "cat": "maneviyat",
+    "subcat": "budizm",
+    "title": "Aniçe: Her Şeyin Geçiciliğini Kucaklamak",
+    "titlePlain": "Aniçe: Her Şeyin",
+    "titleEm": "geçiciliğini kucaklamak",
+    "tag": "☯ Budizm & Zen",
+    "read": "12 dk",
+    "sources": 14,
+    "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+    "desc": "Buda'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.",
+    "body": "<p class='article-lead'>Sabah kahveni içerken masanın üzerindeki buharın yükselişini izledin mi hiç?</p><p>Budizm buna bir isim koymuştur: <strong>Aniçe</strong>. Pali dilinde geçicilik anlamına gelir.</p>",
+    "sourceList": ["Dhammapada", "Thich Nhat Hanh — Farkındalığın Mucizesi"]
+  }
+]
