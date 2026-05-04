@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bilge Kütüphane</title>
+<title>Bilge Kütüphane | Bütüncül Şifa Sistemi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -31,27 +31,35 @@ body{font-family:var(--sans);background:var(--ink);color:#e0d8c8;min-height:100v
 
 /* HEADER */
 header{position:sticky;top:0;z-index:200;background:rgba(13,11,8,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.hdr{max-width:1240px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.hdr{max-width:1300px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer}
 .logo-diamond{width:32px;height:32px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;transform:rotate(45deg);flex-shrink:0}
 .logo-diamond span{transform:rotate(-45deg);color:var(--gold);font-size:13px}
-.logo-name{font-family:var(--serif);font-size:17px;color:var(--gold-light);letter-spacing:.02em}
+.logo-name{font-family:var(--serif);font-size:18px;color:var(--gold-light);letter-spacing:.02em}
 .logo-sub{font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px}
-nav{display:flex;gap:0;align-items:center}
-.nav-item{position:relative;font-size:12.5px;letter-spacing:.06em;color:var(--muted);text-decoration:none;padding:8px 16px;cursor:pointer;transition:color .2s;white-space:nowrap}
+
+nav{display:flex;gap:4px;align-items:center}
+.nav-item{position:relative;font-size:12.5px;letter-spacing:.06em;color:var(--muted);text-decoration:none;padding:10px 12px;cursor:pointer;transition:color .2s;white-space:nowrap}
 .nav-item:hover{color:var(--gold)}
 .nav-item.active{color:var(--gold)}
-.nav-dropdown{position:absolute;top:100%;left:0;min-width:260px;background:rgba(18,15,10,0.98);border:1px solid var(--border);padding:.75rem 0;display:none;z-index:300}
+
+/* MEGA DROPDOWN */
+.nav-dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:240px;background:rgba(18,15,10,0.98);border:1px solid var(--border);padding:.75rem;display:none;z-index:300;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.nav-dropdown.dual-col{min-width:480px;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
 .nav-item:hover .nav-dropdown{display:block}
-.nav-dd-item{display:flex;align-items:center;gap:10px;padding:9px 18px;font-size:13px;color:var(--muted);cursor:pointer;transition:all .15s;text-decoration:none}
-.nav-dd-item:hover{color:var(--gold-light);background:rgba(201,168,76,.06)}
-.nav-dd-icon{font-size:14px;flex-shrink:0}
-.nav-dd-sep{height:1px;background:var(--border);margin:.4rem 0}
+.nav-item:hover .nav-dropdown.dual-col{display:grid}
+.nav-dd-item{display:flex;align-items:center;gap:10px;padding:9px 12px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all .15s;text-decoration:none;border-radius:4px}
+.nav-dd-item:hover{color:var(--gold-light);background:rgba(201,168,76,.08)}
+.nav-dd-icon{font-size:14px;flex-shrink:0;opacity:0.8}
+
 .hdr-search{display:flex;align-items:center;gap:8px;border:1px solid var(--border);padding:6px 14px;cursor:text;transition:border-color .2s}
 .hdr-search:hover{border-color:var(--gold)}
-.hdr-search input{background:none;border:none;outline:none;font-family:var(--sans);font-size:12.5px;color:#e0d8c8;width:160px}
+.hdr-search input{background:none;border:none;outline:none;font-family:var(--sans);font-size:12.5px;color:#e0d8c8;width:120px}
 .hdr-search input::placeholder{color:var(--muted)}
 .search-icon{color:var(--muted);font-size:13px}
+
+.hdr-btn{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:8px 16px;border-radius:2px;cursor:pointer;font-weight:500;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+.hdr-btn:hover{opacity:.85}
 
 /* PAGE SYSTEM */
 .page{display:none;animation:fadeIn .35s ease}
@@ -59,19 +67,19 @@ nav{display:flex;gap:0;align-items:center}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
 /* HOME — HERO */
-.hero{max-width:1240px;margin:0 auto;padding:3.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.hero-main{position:relative;height:500px;overflow:hidden;cursor:pointer;display:block;text-decoration:none}
+.hero{max-width:1300px;margin:0 auto;padding:3.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.hero-main{position:relative;height:500px;overflow:hidden;cursor:pointer;display:block;text-decoration:none;border:1px solid var(--border)}
 .hero-main img,.hero-card img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;filter:brightness(.5) saturate(.55)}
 .hero-main:hover img,.hero-card:hover img{transform:scale(1.05)}
-.hero-main::after,.hero-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,11,8,.92) 0%,rgba(13,11,8,.15) 55%,transparent 100%)}
-.hero-content{position:absolute;bottom:0;left:0;right:0;padding:2rem;z-index:2}
+.hero-main::after,.hero-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(13,11,8,.95) 0%,rgba(13,11,8,.15) 55%,transparent 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:2.5rem;z-index:2}
 .hero-side{display:flex;flex-direction:column;gap:1.5rem}
-.hero-card{position:relative;flex:1;overflow:hidden;cursor:pointer;display:block;text-decoration:none}
+.hero-card{position:relative;flex:1;overflow:hidden;cursor:pointer;display:block;text-decoration:none;border:1px solid var(--border)}
 .hero-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem;z-index:2}
 
 /* TAGS */
-.tag{display:inline-block;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.5);padding:4px 11px;margin-bottom:12px}
-.tag-solid{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.5);padding:5px 12px;margin-bottom:12px;background:rgba(13,11,8,0.5)}
+.tag-multi{border-color:var(--sage);color:#92a898}
 
 /* TYPOGRAPHY */
 .hero-title{font-family:var(--serif);font-size:2.4rem;font-weight:400;line-height:1.2;color:#f0e8d8;margin-bottom:10px}
@@ -80,35 +88,36 @@ nav{display:flex;gap:0;align-items:center}
 .hero-meta{font-size:11px;color:rgba(224,216,200,.45);letter-spacing:.05em}
 
 /* DIVIDER */
-.divider{max-width:1240px;margin:2rem auto;padding:0 2rem;display:flex;align-items:center;gap:1rem}
+.divider{max-width:1300px;margin:2rem auto;padding:0 2rem;display:flex;align-items:center;gap:1rem}
 .divider-line{flex:1;height:1px;background:var(--border)}
-.divider-mark{color:var(--gold);font-size:11px}
+.divider-mark{color:var(--gold);font-size:11px;letter-spacing: .2em;}
 
 /* CATEGORIES STRIP */
-.cats-strip{max-width:1240px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;flex-wrap:wrap;gap:.6rem}
+.cats-strip{max-width:1300px;margin:0 auto;padding:0 2rem 1.5rem;display:flex;flex-wrap:wrap;gap:.6rem}
 .cat-btn{font-family:var(--sans);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid rgba(138,128,112,.28);background:transparent;padding:7px 16px;cursor:pointer;transition:all .2s}
 .cat-btn:hover{border-color:var(--gold);color:var(--gold)}
 .cat-btn.active{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:500}
 
 /* ARTICLES GRID */
-.section{max-width:1240px;margin:0 auto;padding:2rem}
+.section{max-width:1300px;margin:0 auto;padding:2rem}
 .section-hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.75rem;border-bottom:1px solid var(--border);padding-bottom:.9rem}
 .section-title{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--gold-light)}
 .see-all{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;cursor:pointer;transition:opacity .2s}
 .see-all:hover{opacity:.65}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .card{border:1px solid var(--border);background:var(--surface);overflow:hidden;transition:border-color .3s;cursor:pointer;text-decoration:none;display:block}
 .card:hover{border-color:rgba(201,168,76,.6)}
-.card img{width:100%;height:190px;object-fit:cover;filter:brightness(.6) saturate(.45);transition:filter .4s}
+.card img{width:100%;height:200px;object-fit:cover;filter:brightness(.6) saturate(.45);transition:filter .4s}
 .card:hover img{filter:brightness(.75) saturate(.65)}
-.card-body{padding:1.35rem}
-.card-tag{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.65rem}
-.card-title{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:#e8e0d0;line-height:1.4;margin-bottom:.6rem}
+.card-body{padding:1.5rem}
+.card-tag{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:inline-block;margin-bottom:.65rem;border:1px solid var(--border);padding:3px 8px;}
+.card-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:#e8e0d0;line-height:1.4;margin-bottom:.6rem}
 .card-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:.9rem}
 .card-footer{display:flex;gap:.75rem;font-size:10.5px;letter-spacing:.05em;color:rgba(138,128,112,.65);border-top:1px solid var(--border);padding-top:.85rem}
 
 /* BANNER */
-.banner{max-width:1240px;margin:2rem auto;padding:0 2rem}
+.banner{max-width:1300px;margin:2rem auto;padding:0 2rem}
 .banner-inner{border:1px solid var(--gold);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;gap:3rem;position:relative;overflow:hidden}
 .banner-inner::before{content:'✦';position:absolute;font-size:220px;color:rgba(201,168,76,.03);right:-1rem;top:50%;transform:translateY(-50%);font-family:var(--serif);line-height:1}
 .banner-title{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--gold-light);line-height:1.3;margin-bottom:.85rem}
@@ -120,26 +129,26 @@ nav{display:flex;gap:0;align-items:center}
 .stat-sep{width:1px;height:55px;background:var(--border)}
 
 /* CATEGORY PAGE */
-.cat-hero{max-width:1240px;margin:0 auto;padding:3.5rem 2rem 2rem}
-.cat-hero-inner{border:1px solid var(--border);padding:3rem 3.5rem;position:relative;overflow:hidden}
+.cat-hero{max-width:1300px;margin:0 auto;padding:3.5rem 2rem 2rem}
+.cat-hero-inner{border:1px solid var(--border);padding:3rem 3.5rem;position:relative;overflow:hidden;background:linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%)}
 .cat-hero-inner::after{position:absolute;right:3rem;top:50%;transform:translateY(-50%);font-size:120px;opacity:.06;font-family:var(--serif);color:var(--gold);line-height:1}
 .cat-number{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
 .cat-page-title{font-family:var(--serif);font-size:3rem;font-weight:400;color:var(--gold-light);line-height:1.15;margin-bottom:1rem}
 .cat-page-desc{font-size:15px;color:var(--muted);line-height:1.8;max-width:560px;margin-bottom:1.75rem}
 .cat-subcats{display:flex;flex-wrap:wrap;gap:.6rem}
-.subcat-pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);padding:7px 16px;cursor:pointer;transition:all .2s;color:var(--muted)}
+.subcat-pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);padding:7px 16px;cursor:pointer;transition:all .2s;color:var(--muted);background:rgba(18,15,10,0.5)}
 .subcat-pill:hover{border-color:var(--gold);color:var(--gold)}
 .subcat-pill.active{border-color:var(--gold);color:var(--ink);background:var(--gold)}
 
 /* SUBCATEGORY SECTIONS */
-.subcat-section{max-width:1240px;margin:0 auto;padding:1.5rem 2rem}
+.subcat-section{max-width:1300px;margin:0 auto;padding:1.5rem 2rem}
 .subcat-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
 .subcat-hdr-line{flex:1;height:1px;background:var(--border)}
 .subcat-name{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:#e8e0d0}
 .subcat-name em{color:var(--gold-light);font-style:italic}
 
 /* ARTICLE PAGE */
-.article-wrap{max-width:1240px;margin:0 auto;padding:3.5rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:5rem}
+.article-wrap{max-width:1300px;margin:0 auto;padding:3.5rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:5rem}
 .article-hdr{margin-bottom:2.5rem}
 .article-breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:11px;letter-spacing:.08em;color:var(--muted);margin-bottom:1.5rem;flex-wrap:wrap}
 .breadcrumb-link{color:var(--gold);cursor:pointer;transition:opacity .2s}
@@ -148,25 +157,25 @@ nav{display:flex;gap:0;align-items:center}
 .article-title{font-family:var(--serif);font-size:3.2rem;font-weight:400;line-height:1.15;color:var(--gold-light);margin-bottom:1.75rem}
 .article-title em{font-style:italic;color:#e8e0d0}
 .article-rule{width:44px;height:1px;background:var(--gold)}
-.article-img{width:100%;height:380px;object-fit:cover;filter:brightness(.65) saturate(.45);margin:2.5rem 0}
+.article-img{width:100%;height:400px;object-fit:cover;filter:brightness(.65) saturate(.45);margin:2.5rem 0;border:1px solid var(--border)}
 .article-body{color:#c0b8a5;font-size:16px;line-height:1.95}
 .article-body>*+*{margin-top:1.5rem}
 .article-lead{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:#d0c8b5;line-height:1.7}
 .article-body strong{color:var(--gold);font-weight:400}
 .article-h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--gold-light);margin-top:2.5rem}
 .article-sep{text-align:center;color:rgba(201,168,76,.4);letter-spacing:.4em;font-size:11px;margin:2rem 0}
-blockquote{border-left:2px solid var(--gold);padding:.85rem 0 .85rem 1.75rem;margin:2rem 0}
+blockquote{border-left:2px solid var(--gold);padding:.85rem 0 .85rem 1.75rem;margin:2rem 0;background:linear-gradient(to right, rgba(201,168,76,0.03), transparent)}
 blockquote p{font-family:var(--serif);font-size:1.3rem!important;font-style:italic;color:#b8b0a0!important;line-height:1.6}
 blockquote cite{display:block;font-size:11.5px;letter-spacing:.08em;color:var(--muted);margin-top:.65rem;font-style:normal}
 .article-closing{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:#988870;line-height:1.7}
-.sources-box{border:1px solid var(--border);padding:1.65rem;margin-top:2.5rem}
+.sources-box{border:1px solid var(--border);padding:1.65rem;margin-top:2.5rem;background:rgba(255,255,255,0.01)}
 .sources-title{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.15rem}
 .sources-list{list-style:none}
 .sources-list li{font-size:13px;color:var(--muted);padding:.55rem 0;border-bottom:1px solid var(--border);display:flex;gap:.65rem;align-items:baseline}
 .sources-list li:last-child{border-bottom:none}
 .sources-list li::before{content:'—';color:var(--gold);font-size:11px;flex-shrink:0}
 .article-nav-btns{display:flex;gap:1rem;margin-top:2.5rem}
-.article-nav-btn{flex:1;border:1px solid var(--border);padding:1rem 1.25rem;cursor:pointer;transition:border-color .2s;text-align:left}
+.article-nav-btn{flex:1;border:1px solid var(--border);padding:1rem 1.25rem;cursor:pointer;transition:border-color .2s;text-align:left;background:var(--surface)}
 .article-nav-btn:hover{border-color:var(--gold)}
 .article-nav-btn-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
 .article-nav-btn-title{font-family:var(--serif);font-size:.95rem;color:#d0c8b8;line-height:1.35}
@@ -176,11 +185,11 @@ blockquote cite{display:block;font-size:11.5px;letter-spacing:.08em;color:var(--
 .sidebar-section{margin-bottom:2.5rem}
 .sidebar-title{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:.7rem;margin-bottom:1.15rem}
 .sidebar-card{display:flex;gap:.85rem;margin-bottom:1.1rem;cursor:pointer;text-decoration:none}
-.sidebar-card img{width:68px;height:68px;object-fit:cover;flex-shrink:0;filter:brightness(.6) saturate(.45)}
+.sidebar-card img{width:68px;height:68px;object-fit:cover;flex-shrink:0;filter:brightness(.6) saturate(.45);border:1px solid var(--border)}
 .sidebar-card:hover .sidebar-card-ttl{color:var(--gold-light)}
 .sidebar-card-ttl{font-family:var(--serif);font-size:.9rem;color:#d0c8b8;line-height:1.4;margin-bottom:3px}
 .sidebar-card-meta{font-size:10.5px;color:var(--muted)}
-.sidebar-quote{border:1px solid var(--border);padding:1.35rem}
+.sidebar-quote{border:1px solid var(--border);padding:1.35rem;background:linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%)}
 .sidebar-quote-txt{font-family:var(--serif);font-size:1rem;font-style:italic;color:#b8b0a0;line-height:1.65;margin-bottom:.65rem}
 .sidebar-quote-auth{font-size:10.5px;letter-spacing:.08em;color:var(--gold)}
 .sidebar-cats a{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);padding:.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;cursor:pointer;transition:color .2s}
@@ -200,14 +209,17 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
 .search-big input{flex:1;background:none;border:none;outline:none;font-family:var(--serif);font-size:2rem;color:#e8e0d0;font-weight:400}
 .search-big input::placeholder{color:rgba(138,128,112,.4)}
 .search-results-ttl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
-.search-result-item{border:1px solid var(--border);padding:1.35rem 1.5rem;margin-bottom:.85rem;cursor:pointer;transition:border-color .2s;display:flex;gap:1.25rem;align-items:flex-start}
+.search-result-item{border:1px solid var(--border);padding:1.35rem 1.5rem;margin-bottom:.85rem;cursor:pointer;transition:border-color .2s;display:flex;gap:1.25rem;align-items:flex-start;background:rgba(255,255,255,0.01)}
 .search-result-item:hover{border-color:var(--gold)}
-.sri-img{width:80px;height:60px;object-fit:cover;flex-shrink:0;filter:brightness(.6) saturate(.45)}
+.sri-img{width:80px;height:60px;object-fit:cover;flex-shrink:0;filter:brightness(.6) saturate(.45);border:1px solid var(--border)}
 .sri-cat{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
 .sri-title{font-family:var(--serif);font-size:1.05rem;color:#e0d8c8;line-height:1.35}
 .sri-meta{font-size:11px;color:var(--muted);margin-top:.35rem}
 
 /* RESPONSIVE */
+@media(max-width:1100px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:960px){
   .hero{grid-template-columns:1fr}
   .hero-main{height:360px}
@@ -215,15 +227,15 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
   .banner-inner{flex-direction:column;padding:2rem}
   .article-wrap{grid-template-columns:1fr}
   nav{display:none}
-  .hdr-search{display:none}
 }
 @media(max-width:600px){
-  .grid-3{grid-template-columns:1fr}
+  .grid-3,.grid-4{grid-template-columns:1fr}
   .hero-title{font-size:1.9rem}
   .cat-page-title{font-size:2.2rem}
   .article-title{font-size:2.2rem}
   .banner-inner{padding:1.75rem}
   .banner-stats{gap:1.5rem}
+  .hdr-search{display:none}
 }
 </style>
 </head>
@@ -236,82 +248,113 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="logo-diamond"><span>✦</span></div>
       <div>
         <div class="logo-name">Bilge Kütüphane</div>
-        <div class="logo-sub">Spiritüel · Felsefe · Bilgelik</div>
+        <div class="logo-sub">Bütüncül Şifa Sistemi</div>
       </div>
     </div>
 
+    <!-- 7 ANA SÜTUNLU MEGA MENÜ -->
     <nav>
-      <div class="nav-item" onclick="showCategory('maneviyat')">
-        Maneviyat & Dinler
-        <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','budizm')"><span class="nav-dd-icon">☯</span>Budizm & Zen</div>
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','hinduizm')"><span class="nav-dd-icon">🕉</span>Hinduizm & Vedanta</div>
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','tasavvuf')"><span class="nav-dd-icon">🌙</span>Tasavvuf & Sufilik</div>
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','samanizm')"><span class="nav-dd-icon">🥁</span>Şamanizm</div>
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','kabala')"><span class="nav-dd-icon">✡</span>Kabala</div>
-          <div class="nav-dd-item" onclick="showSubcat('maneviyat','gnostisizm')"><span class="nav-dd-icon">🌟</span>Gnostisizm</div>
-        </div>
-      </div>
-      <div class="nav-item" onclick="showCategory('saglik')">
-        Sağlık & Şifa
-        <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('saglik','yoga')"><span class="nav-dd-icon">🧘</span>Yoga & Meditasyon</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','nlp')"><span class="nav-dd-icon">🧠</span>NLP</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','eft')"><span class="nav-dd-icon">🤲</span>EFT & Enerji Terapileri</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','hipnoterapi')"><span class="nav-dd-icon">💫</span>Hipnoterapi</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','reiki')"><span class="nav-dd-icon">✋</span>Reiki & Çakralar</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','travma')"><span class="nav-dd-icon">🌊</span>Travma & İyileşme</div>
-          <!-- YENİ EKLENEN ALT KATEGORİLER -->
-          <div class="nav-dd-item" onclick="showSubcat('saglik','aromaterapi')"><span class="nav-dd-icon">🌿</span>Şifalı Bitkiler & Aromaterapi</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','beslenme')"><span class="nav-dd-icon">🍃</span>Beslenme & Detoks</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','alternatif')"><span class="nav-dd-icon">🩺</span>Alternatif Tıp & Homeopati</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','nefes')"><span class="nav-dd-icon">🫁</span>Nefes & Farkındalık</div>
-          <div class="nav-dd-item" onclick="showSubcat('saglik','somatik')"><span class="nav-dd-icon">🌊</span>Somatik & Beden Terapileri</div>
-        </div>
-      </div>
       <div class="nav-item" onclick="showCategory('zihin')">
-        Zihin & Bilinç
-        <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('zihin','psikoloji')"><span class="nav-dd-icon">🔬</span>Derinlik Psikolojisi</div>
-          <div class="nav-dd-item" onclick="showSubcat('zihin','ruyalar')"><span class="nav-dd-icon">🌙</span>Rüyalar & Bilinçaltı</div>
-          <div class="nav-dd-item" onclick="showSubcat('zihin','kuantum')"><span class="nav-dd-icon">⚛</span>Kuantum Bilinç</div>
-          <div class="nav-dd-item" onclick="showSubcat('zihin','metafizik')"><span class="nav-dd-icon">∞</span>Metafizik</div>
-          <div class="nav-dd-item" onclick="showSubcat('zihin','parapsikoloji')"><span class="nav-dd-icon">👁</span>Parapsikoloji</div>
+        Zihin & Psikoloji
+        <div class="nav-dropdown dual-col">
+          <div class="nav-dd-item" onclick="showSubcat('zihin','bilincalti')"><span class="nav-dd-icon">🧠</span>Bilinçaltı & Reprogramlama</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','travma')"><span class="nav-dd-icon">🌊</span>Travma & Duygusal Şifa</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','bagimlilik')"><span class="nav-dd-icon">⛓</span>Bağımlılık & Dönüşüm</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','norobilim')"><span class="nav-dd-icon">🔬</span>Nörobilim & Zihin</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','pozitif')"><span class="nav-dd-icon">☀️</span>Pozitif Psikoloji</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','golge')"><span class="nav-dd-icon">🌑</span>Gölge Çalışması</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','icsel')"><span class="nav-dd-icon">🧸</span>İçsel Çocuk Çalışması</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','duygusal')"><span class="nav-dd-icon">❤️</span>Duygusal Zeka</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','stres')"><span class="nav-dd-icon">🌪</span>Stres & Anksiyete</div>
+          <div class="nav-dd-item" onclick="showSubcat('zihin','psikosomatik')"><span class="nav-dd-icon">🩹</span>Psikosomatik Hastalıklar</div>
         </div>
       </div>
-      <div class="nav-item" onclick="showCategory('ezoterizm')">
-        Ezoterizm
-        <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('ezoterizm','okultizm')"><span class="nav-dd-icon">🔮</span>Okültizm & Hermetizm</div>
-          <div class="nav-dd-item" onclick="showSubcat('ezoterizm','astroloji')"><span class="nav-dd-icon">⭐</span>Astroloji</div>
-          <div class="nav-dd-item" onclick="showSubcat('ezoterizm','tarot')"><span class="nav-dd-icon">🃏</span>Tarot & Kehanet</div>
-          <div class="nav-dd-item" onclick="showSubcat('ezoterizm','numeroloji')"><span class="nav-dd-icon">🔢</span>Numeroloji</div>
-          <div class="nav-dd-item" onclick="showSubcat('ezoterizm','sembolizm')"><span class="nav-dd-icon">⚜</span>Sembolizm & Arketip</div>
+      
+      <div class="nav-item" onclick="showCategory('ruh')">
+        Ruh & Spiritüel
+        <div class="nav-dropdown dual-col">
+          <div class="nav-dd-item" onclick="showSubcat('ruh','meditasyon')"><span class="nav-dd-icon">🧘</span>Meditasyon Teknikleri</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','farkindalik')"><span class="nav-dd-icon">👁</span>Farkındalık (Mindfulness)</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','enerji_calisma')"><span class="nav-dd-icon">✨</span>Enerji Çalışmaları</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','cakra')"><span class="nav-dd-icon">🌈</span>Çakra Sistemleri</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','kundalini')"><span class="nav-dd-icon">🐍</span>Kundalini & Enerji Uyanışı</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','uyanis')"><span class="nav-dd-icon">🦋</span>Spiritüel Uyanış Süreçleri</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','tasavvuf')"><span class="nav-dd-icon">🌙</span>Sufizm & Tasavvuf</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','dogu')"><span class="nav-dd-icon">☯</span>Doğu Öğretileri</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','samanizm')"><span class="nav-dd-icon">🥁</span>Şamanizm & Ritüeller</div>
+          <div class="nav-dd-item" onclick="showSubcat('ruh','mantra')"><span class="nav-dd-icon">📿</span>Dualar & Mantralar</div>
         </div>
       </div>
-      <div class="nav-item" onclick="showCategory('tarih')">
-        Tarih & Felsefe
-        <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('tarih','felsefe')"><span class="nav-dd-icon">🏛</span>Felsefe</div>
-          <div class="nav-dd-item" onclick="showSubcat('tarih','antik')"><span class="nav-dd-icon">🗿</span>Antik Medeniyetler</div>
-          <div class="nav-dd-item" onclick="showSubcat('tarih','mitoloji')"><span class="nav-dd-icon">🌍</span>Mitoloji</div>
-          <div class="nav-dd-item" onclick="showSubcat('tarih','edebiyat')"><span class="nav-dd-icon">📜</span>Kadim Edebiyat</div>
+
+      <div class="nav-item" onclick="showCategory('enerji')">
+        Enerji & Frekans
+        <div class="nav-dropdown dual-col">
+          <div class="nav-dd-item" onclick="showSubcat('enerji','reiki')"><span class="nav-dd-icon">✋</span>Reiki & Enerji Şifası</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','bioenerji')"><span class="nav-dd-icon">💫</span>Bioenerji</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','frekans')"><span class="nav-dd-icon">📻</span>Frekans Terapileri</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','ses')"><span class="nav-dd-icon">🎶</span>Ses Terapisi</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','kristal')"><span class="nav-dd-icon">💎</span>Kristaller & Taşlar</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','aura')"><span class="nav-dd-icon">✨</span>Aura & Enerji Alanı</div>
+          <div class="nav-dd-item" onclick="showSubcat('enerji','kuantum')"><span class="nav-dd-icon">⚛</span>Kuantum Şifa</div>
         </div>
       </div>
-      <div class="nav-item" onclick="showCategory('donusum')">
-        Kişisel Dönüşüm
+
+      <div class="nav-item" onclick="showCategory('doga')">
+        Doğa & Şifa
+        <div class="nav-dropdown dual-col">
+          <div class="nav-dd-item" onclick="showSubcat('doga','fitoterapi')"><span class="nav-dd-icon">🌿</span>Fitoterapi (Bitkiler)</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','aromaterapi')"><span class="nav-dd-icon">🌸</span>Aromaterapi</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','homeopati')"><span class="nav-dd-icon">💧</span>Homeopati</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','ayurveda')"><span class="nav-dd-icon">🌱</span>Ayurveda</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','cin_tibbi')"><span class="nav-dd-icon">🍵</span>Geleneksel Çin Tıbbı</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','detoks')"><span class="nav-dd-icon">🍃</span>Detoks & Arınma</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','oruc')"><span class="nav-dd-icon">⏳</span>Oruç & Açlık Terapileri</div>
+          <div class="nav-dd-item" onclick="showSubcat('doga','takviye')"><span class="nav-dd-icon">💊</span>Doğal Takviyeler</div>
+        </div>
+      </div>
+
+      <div class="nav-item" onclick="showCategory('beden')">
+        Beden & Beslenme
+        <div class="nav-dropdown dual-col">
+          <div class="nav-dd-item" onclick="showSubcat('beden','holistik_beslenme')"><span class="nav-dd-icon">🥗</span>Holistik Beslenme</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','fonksiyonel')"><span class="nav-dd-icon">🩺</span>Fonksiyonel Tıp Beslenmesi</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','vegan')"><span class="nav-dd-icon">🥦</span>Vegan & Bitkisel</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','ketojenik')"><span class="nav-dd-icon">🥑</span>Ketojenik & Özel Diyetler</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','sindirim')"><span class="nav-dd-icon">🦠</span>Sindirim & Bağırsak</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','hormon')"><span class="nav-dd-icon">⚖</span>Hormon Dengesi</div>
+          <div class="nav-dd-item" onclick="showSubcat('beden','su')"><span class="nav-dd-icon">💧</span>Su & Mineral Dengesi</div>
+        </div>
+      </div>
+
+      <div class="nav-item" onclick="showCategory('hareket')">
+        Hareket
         <div class="nav-dropdown">
-          <div class="nav-dd-item" onclick="showSubcat('donusum','anlam')"><span class="nav-dd-icon">🌱</span>Anlam Arayışı</div>
-          <div class="nav-dd-item" onclick="showSubcat('donusum','bereket')"><span class="nav-dd-icon">🌿</span>Bereket Bilinci</div>
-          <div class="nav-dd-item" onclick="showSubcat('donusum','iliskiler')"><span class="nav-dd-icon">💞</span>İlişkiler & Bağlanma</div>
-          <div class="nav-dd-item" onclick="showSubcat('donusum','gelisim')"><span class="nav-dd-icon">🦋</span>Kişisel Gelişim</div>
+          <div class="nav-dd-item" onclick="showSubcat('hareket','yoga')"><span class="nav-dd-icon">🧘‍♀️</span>Yoga</div>
+          <div class="nav-dd-item" onclick="showSubcat('hareket','nefes')"><span class="nav-dd-icon">🫁</span>Nefes Çalışmaları</div>
+          <div class="nav-dd-item" onclick="showSubcat('hareket','somatik')"><span class="nav-dd-icon">🌊</span>Somatik Hareket</div>
+          <div class="nav-dd-item" onclick="showSubcat('hareket','pilates')"><span class="nav-dd-icon">🤸‍♀️</span>Pilates & Esneklik</div>
+          <div class="nav-dd-item" onclick="showSubcat('hareket','topraklanma')"><span class="nav-dd-icon">👣</span>Doğa ile Hareket</div>
+        </div>
+      </div>
+
+      <div class="nav-item" onclick="showCategory('bilinc')">
+        Bilinç & Kozmos
+        <div class="nav-dropdown">
+          <div class="nav-dd-item" onclick="showSubcat('bilinc','ruya')"><span class="nav-dd-icon">🌌</span>Rüya Çalışmaları</div>
+          <div class="nav-dd-item" onclick="showSubcat('bilinc','arketipler')"><span class="nav-dd-icon">🎭</span>Arketipler & Ruhsal Haritalar</div>
+          <div class="nav-dd-item" onclick="showSubcat('bilinc','astroloji')"><span class="nav-dd-icon">⭐</span>Astroloji & Kozmik Etkiler</div>
         </div>
       </div>
     </nav>
 
-    <div class="hdr-search" onclick="showPage('search')">
-      <span class="search-icon">⌕</span>
-      <input type="text" placeholder="Ara..." readonly>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div class="hdr-search" onclick="showPage('search')">
+        <span class="search-icon">⌕</span>
+        <input type="text" placeholder="Ara..." readonly>
+      </div>
+      <div class="hdr-btn" onclick="alert('Bütüncül Haritalar (Kişilik, Enerji ve Beslenme Analizi) modülü yapım aşamasındadır.')">
+        🔮 Bütüncül Haritanı Çıkar
+      </div>
     </div>
   </div>
 </header>
@@ -326,7 +369,8 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
     <div class="hero-main" onclick="showArticle('anice')">
       <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="">
       <div class="hero-content">
-        <div class="tag">☯ Budizm & Zen</div>
+        <div class="tag">☯ Doğu Öğretileri</div>
+        <div class="tag tag-multi">🧘 Ruhsal Gelişim</div>
         <h2 class="hero-title">Aniçe: Her şeyin<br><em>geçiciliğini kucaklamak</em></h2>
         <p class="hero-meta">12 dk okuma · 14 kaynak kitap</p>
       </div>
@@ -335,43 +379,47 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="hero-card" onclick="showArticle('golge')">
         <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag">🧠 Psikoloji</div>
+          <div class="tag">🌑 Gölge Çalışması</div>
           <div class="hero-card-title">Jung'un Gölge Arketipi</div>
+          <p class="hero-meta">Zihin & Psikoloji</p>
         </div>
       </div>
       <div class="hero-card" onclick="showArticle('hermes')">
         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag">🔮 Ezoterizm</div>
+          <div class="tag">🎭 Arketipler</div>
           <div class="hero-card-title">Hermes Trismegistus'un Sırrı</div>
+          <p class="hero-meta">Bilinç & Kozmos</p>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="divider"><div class="divider-line"></div><div class="divider-mark">✦ 7 ANA SÜTUN ✦</div><div class="divider-line"></div></div>
+
   <!-- CATEGORIES STRIP -->
-  <div class="divider"><div class="divider-line"></div><div class="divider-mark">✦</div><div class="divider-line"></div></div>
   <div class="cats-strip">
     <button class="cat-btn active" onclick="filterHome(this,'tumu')">Tümü</button>
-    <button class="cat-btn" onclick="showCategory('maneviyat')">🕉 Maneviyat & Dinler</button>
-    <button class="cat-btn" onclick="showCategory('saglik')">🌿 Bütüncül Sağlık</button>
-    <button class="cat-btn" onclick="showCategory('zihin')">🧠 Zihin & Bilinç</button>
-    <button class="cat-btn" onclick="showCategory('ezoterizm')">🔮 Ezoterizm & Okült</button>
-    <button class="cat-btn" onclick="showCategory('tarih')">🏛 Tarih & Felsefe</button>
-    <button class="cat-btn" onclick="showCategory('donusum')">🌱 Kişisel Dönüşüm</button>
+    <button class="cat-btn" onclick="showCategory('zihin')">🧠 Zihin</button>
+    <button class="cat-btn" onclick="showCategory('ruh')">🧘 Ruh</button>
+    <button class="cat-btn" onclick="showCategory('enerji')">⚡ Enerji</button>
+    <button class="cat-btn" onclick="showCategory('doga')">🌿 Doğa & Şifa</button>
+    <button class="cat-btn" onclick="showCategory('beden')">🥗 Beden</button>
+    <button class="cat-btn" onclick="showCategory('hareket')">💪 Hareket</button>
+    <button class="cat-btn" onclick="showCategory('bilinc')">🌌 Bilinç</button>
   </div>
 
   <!-- LATEST ARTICLES -->
-  <div class="section">
+  <div class="section" style="padding-top:0;">
     <div class="section-hdr">
-      <div class="section-title">Son Yazılar</div>
+      <div class="section-title">Bütüncül Bağlantılar</div>
       <span class="see-all" onclick="showPage('search')">Tümünü Gör →</span>
     </div>
     <div class="grid-3">
       <div class="card" onclick="showArticle('anice')">
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="">
         <div class="card-body">
-          <span class="card-tag">☯ Budizm</span>
+          <span class="card-tag">☯ Doğu Öğretileri</span>
           <div class="card-title">Aniçe: Her Şeyin Geçiciliğini Kucaklamak</div>
           <div class="card-desc">Buda'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.</div>
           <div class="card-footer"><span>12 dk okuma</span><span>·</span><span>14 kaynak</span></div>
@@ -380,7 +428,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="card" onclick="showArticle('golge')">
         <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=600&q=80" alt="">
         <div class="card-body">
-          <span class="card-tag">🧠 Psikoloji</span>
+          <span class="card-tag">🌑 Gölge Çalışması</span>
           <div class="card-title">Jung'un Gölge Arketipi: Kendi Karanlığınla Yüzleşmek</div>
           <div class="card-desc">Carl Gustav Jung'un gölge çalışmasının dönüştürücü gücü ve kolektif bilinçdışı.</div>
           <div class="card-footer"><span>10 dk okuma</span><span>·</span><span>9 kaynak</span></div>
@@ -389,7 +437,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="card" onclick="showArticle('hermes')">
         <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="">
         <div class="card-body">
-          <span class="card-tag">🔮 Ezoterizm</span>
+          <span class="card-tag">🎭 Arketipler</span>
           <div class="card-title">Hermes Trismegistus ve Kadim Bilgeliğin Dili</div>
           <div class="card-desc">Hermetik felsefenin kökleri ve "Yukarıda ne varsa aşağıda da odur" ilkesinin derinlikleri.</div>
           <div class="card-footer"><span>15 dk okuma</span><span>·</span><span>11 kaynak</span></div>
@@ -398,7 +446,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="card" onclick="showArticle('nlp')">
         <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="">
         <div class="card-body">
-          <span class="card-tag">🌿 Bütüncül Sağlık</span>
+          <span class="card-tag">🧠 Bilinçaltı & Reprogramlama</span>
           <div class="card-title">NLP ile Zihin Programlama: Kökler ve Pratik</div>
           <div class="card-desc">Nöro-linguistik programlamanın temelleri ve günlük yaşamda dönüştürücü etkileri.</div>
           <div class="card-footer"><span>8 dk okuma</span><span>·</span><span>7 kaynak</span></div>
@@ -429,70 +477,68 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
   <div class="banner">
     <div class="banner-inner">
       <div>
-        <div class="banner-title">3.568 kitap,<br>bir çatı altında</div>
-        <div class="banner-sub">Her yazı gerçek kitap kaynaklarına dayandırılarak hazırlanmaktadır.<br>Spiritüel yolculuğunuz için güvenilir bir rehber.</div>
+        <div class="banner-title">Bütüncül Haritanı<br>Keşfetmeye Hazır Mısın?</div>
+        <div class="banner-sub">3.568 kitabın bilgeliğini 7 ana sütun ve 50 alt başlıkta derledik.<br>Zihin, Beden ve Ruh bütünlüğünüz için kişisel yolculuğunuz başlıyor.</div>
       </div>
       <div class="banner-stats">
-        <div class="stat"><div class="stat-num">3568</div><div class="stat-label">Kaynak Kitap</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">Ana Sütun</div></div>
         <div class="stat-sep"></div>
-        <div class="stat"><div class="stat-num">6</div><div class="stat-label">Ana Kategori</div></div>
-        <div class="stat-sep"></div>
-        <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Alt Başlık</div></div>
+        <div class="stat"><div class="stat-num">50</div><div class="stat-label">Alt Kategori</div></div>
       </div>
     </div>
   </div>
 
-  <!-- ANA KATEGORİ KARTI GRİDİ -->
+  <!-- 7 ANA KATEGORİ KARTI GRİDİ -->
   <div class="section">
-    <div class="section-hdr"><div class="section-title">Tüm Kategoriler</div></div>
-    <div class="grid-3" style="gap:1rem">
-      <div class="card" onclick="showCategory('maneviyat')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1509023464722-18d996393efb?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <span class="card-tag">01 — 6 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🕉 Maneviyat & Dinler</div>
-          <div class="card-desc" style="font-size:12.5px">Budizm, Hinduizm, Tasavvuf, Şamanizm, Kabala, Gnostisizm</div>
+    <div class="section-hdr"><div class="section-title">Bütüncül Sistem</div></div>
+    <div class="grid-4" style="gap:1rem">
+      <div class="card" onclick="showCategory('zihin')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">🧠</div>
+          <div class="card-title" style="font-size:1.25rem">Zihin & Psikoloji</div>
+          <div class="card-desc" style="font-size:12.5px">Bilinçaltı kalıpları, nörobilim ve duygusal haritalarımız. (10 Alt Başlık)</div>
         </div>
       </div>
-      <div class="card" onclick="showCategory('saglik')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <!-- ALT BAŞLIK SAYISINI VE İÇERİĞİ GÜNCELLEDİM -->
-          <span class="card-tag">02 — 11 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🌿 Bütüncül Sağlık & Şifa</div>
-          <div class="card-desc" style="font-size:12.5px">Yoga, Meditasyon, NLP, EFT, Reiki, Travma, Aromaterapi, Beslenme, Nefes, Somatik Terapiler</div>
+      <div class="card" onclick="showCategory('ruh')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">🧘</div>
+          <div class="card-title" style="font-size:1.25rem">Ruhsal & Spiritüel</div>
+          <div class="card-desc" style="font-size:12.5px">Farkındalık, içsel uyanış ve kadim doğu/batı öğretileri. (10 Alt Başlık)</div>
         </div>
       </div>
-      <div class="card" onclick="showCategory('zihin')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <span class="card-tag">03 — 5 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🧠 Zihin & Bilinç</div>
-          <div class="card-desc" style="font-size:12.5px">Derinlik Psikolojisi, Rüyalar, Kuantum Bilinç, Metafizik</div>
+      <div class="card" onclick="showCategory('enerji')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">⚡</div>
+          <div class="card-title" style="font-size:1.25rem">Enerji & Frekans</div>
+          <div class="card-desc" style="font-size:12.5px">Görünmeyen titreşimsel anatomi ve ince beden çalışmaları. (7 Alt Başlık)</div>
         </div>
       </div>
-      <div class="card" onclick="showCategory('ezoterizm')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <span class="card-tag">04 — 5 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🔮 Ezoterizm & Okült</div>
-          <div class="card-desc" style="font-size:12.5px">Hermetizm, Astroloji, Tarot, Numeroloji, Sembolizm</div>
+      <div class="card" onclick="showCategory('doga')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">🌿</div>
+          <div class="card-title" style="font-size:1.25rem">Doğal & Alternatif Tıp</div>
+          <div class="card-desc" style="font-size:12.5px">Yeryüzünün şifa kaynakları ve kadim tıbbi gelenekler. (8 Alt Başlık)</div>
         </div>
       </div>
-      <div class="card" onclick="showCategory('tarih')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <span class="card-tag">05 — 4 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🏛 Tarih, Felsefe & Kültür</div>
-          <div class="card-desc" style="font-size:12.5px">Antik Medeniyetler, Felsefe, Mitoloji, Kadim Edebiyat</div>
+      <div class="card" onclick="showCategory('beden')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">🥗</div>
+          <div class="card-title" style="font-size:1.25rem">Beslenme & Beden</div>
+          <div class="card-desc" style="font-size:12.5px">Hücresel sağlık, mikrobiyom ve içsel sistemlerin biyolojisi. (7 Alt Başlık)</div>
         </div>
       </div>
-      <div class="card" onclick="showCategory('donusum')" style="cursor:pointer">
-        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80" alt="" style="height:140px">
-        <div class="card-body" style="padding:1.15rem">
-          <span class="card-tag">06 — 4 Alt Başlık</span>
-          <div class="card-title" style="font-size:1.25rem">🌱 Kişisel Dönüşüm & Yaşam</div>
-          <div class="card-desc" style="font-size:12.5px">Anlam Arayışı, Bereket Bilinci, İlişkiler, Kişisel Gelişim</div>
+      <div class="card" onclick="showCategory('hareket')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">💪</div>
+          <div class="card-title" style="font-size:1.25rem">Hareket & Pratikler</div>
+          <div class="card-desc" style="font-size:12.5px">Bedenin bilgeliğini uyandıran somatik ve fiziksel disiplinler. (5 Alt Başlık)</div>
+        </div>
+      </div>
+      <div class="card" onclick="showCategory('bilinc')">
+        <div class="card-body" style="padding:1.5rem">
+          <div style="font-size:2rem; margin-bottom:.5rem">🌌</div>
+          <div class="card-title" style="font-size:1.25rem">Bilinç & Kozmos</div>
+          <div class="card-desc" style="font-size:12.5px">Evrensel döngüler, semboller ve rüya boyutu. (3 Alt Başlık)</div>
         </div>
       </div>
     </div>
@@ -500,7 +546,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
 
   <footer>
     <div class="footer-logo">✦ Bilge Kütüphane</div>
-    <div class="footer-sub">3.568 kitabın özünden derlenen spiritüel ve felsefe içerikleri.</div>
+    <div class="footer-sub">Bütüncül Şifa ve Yaşam Sistemi.</div>
     <div class="footer-copy">© 2026 Bilge Kütüphane — Tüm hakları saklıdır.</div>
   </footer>
 </div>
@@ -519,7 +565,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
   <div id="cat-articles-container"></div>
   <footer>
     <div class="footer-logo">✦ Bilge Kütüphane</div>
-    <div class="footer-sub">3.568 kitabın özünden derlenen spiritüel ve felsefe içerikleri.</div>
+    <div class="footer-sub">Bütüncül Şifa ve Yaşam Sistemi.</div>
     <div class="footer-copy">© 2026 Bilge Kütüphane — Tüm hakları saklıdır.</div>
   </footer>
 </div>
@@ -534,7 +580,7 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
   </div>
   <footer>
     <div class="footer-logo">✦ Bilge Kütüphane</div>
-    <div class="footer-sub">3.568 kitabın özünden derlenen spiritüel ve felsefe içerikleri.</div>
+    <div class="footer-sub">Bütüncül Şifa ve Yaşam Sistemi.</div>
     <div class="footer-copy">© 2026 Bilge Kütüphane — Tüm hakları saklıdır.</div>
   </footer>
 </div>
@@ -553,92 +599,113 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
   </div>
   <footer>
     <div class="footer-logo">✦ Bilge Kütüphane</div>
-    <div class="footer-sub">3.568 kitabın özünden derlenen spiritüel ve felsefe içerikleri.</div>
+    <div class="footer-sub">Bütüncül Şifa ve Yaşam Sistemi.</div>
     <div class="footer-copy">© 2026 Bilge Kütüphane — Tüm hakları saklıdır.</div>
   </footer>
 </div>
 
 <script>
 // ══════════════════════════════════════════════════════
-// DATA
+// DATA: 7 PILLARS & 50 SUBCATEGORIES
 // ══════════════════════════════════════════════════════
 const CATEGORIES = {
-  maneviyat:{
-    title:'Maneviyat & Dinler',emoji:'🕉',num:'01',
-    desc:'Dünya\'nın kadim inanç sistemleri, mistik gelenekler ve ruhsal öğretiler. Budizm\'den Kabala\'ya, Tasavvuf\'tan Gnostisizm\'e insanlığın manevi mirasını keşfedin.',
-    color:'rgba(201,168,76,.08)',
-    subcats:[
-      {id:'budizm',name:'Budizm & Zen',icon:'☯'},
-      {id:'hinduizm',name:'Hinduizm & Vedanta',icon:'🕉'},
-      {id:'tasavvuf',name:'Tasavvuf & Sufilik',icon:'🌙'},
-      {id:'samanizm',name:'Şamanizm',icon:'🥁'},
-      {id:'kabala',name:'Kabala',icon:'✡'},
-      {id:'gnostisizm',name:'Gnostisizm',icon:'🌟'},
-    ]
-  },
-  saglik:{
-    title:'Bütüncül Sağlık & Şifa',emoji:'🌿',num:'02',
-    desc:'Beden, zihin ve ruh bütünlüğüne dayalı tüm şifa yolları. Çağdaş bilim ile kadim bilgeliğin kesiştiği noktada terapötik yaklaşımlar.',
-    color:'rgba(61,90,69,.1)',
-    subcats:[
-      {id:'yoga',name:'Yoga & Meditasyon',icon:'🧘'},
-      {id:'nlp',name:'NLP',icon:'🧠'},
-      {id:'eft',name:'EFT & Enerji Terapileri',icon:'🤲'},
-      {id:'hipnoterapi',name:'Hipnoterapi',icon:'💫'},
-      {id:'reiki',name:'Reiki & Çakralar',icon:'✋'},
-      {id:'travma',name:'Travma & İyileşme',icon:'🌊'},
-      // YENİ EKLENEN ALT KATEGORİLER
-      {id:'aromaterapi',name:'Şifalı Bitkiler & Aromaterapi',icon:'🌿'},
-      {id:'beslenme',name:'Beslenme & Detoks',icon:'🍃'},
-      {id:'alternatif',name:'Alternatif Tıp & Homeopati',icon:'🩺'},
-      {id:'nefes',name:'Nefes & Farkındalık',icon:'🫁'},
-      {id:'somatik',name:'Somatik & Beden Terapileri',icon:'🌊'}
-    ]
-  },
   zihin:{
-    title:'Zihin & Bilinç',emoji:'🧠',num:'03',
-    desc:'Psikoloji, bilinçaltı araştırmaları, kuantum bilinç ve insan zihninin sınırlarına yolculuk. Görünmeyeni anlamak için bir harita.',
+    title:'Zihin & Psikoloji',emoji:'🧠',num:'01',
+    desc:'Bilinçaltı kalıpları, nörobilim ve duygusal haritalarımız. Düşünce süreçlerini şifalandırma yolları.',
     color:'rgba(70,50,120,.08)',
     subcats:[
-      {id:'psikoloji',name:'Derinlik Psikolojisi',icon:'🔬'},
-      {id:'ruyalar',name:'Rüyalar & Bilinçaltı',icon:'🌙'},
-      {id:'kuantum',name:'Kuantum Bilinç',icon:'⚛'},
-      {id:'metafizik',name:'Metafizik',icon:'∞'},
-      {id:'parapsikoloji',name:'Parapsikoloji',icon:'👁'},
+      {id:'bilincalti',name:'Bilinçaltı & Reprogramlama',icon:'🧠'},
+      {id:'travma',name:'Travma & Duygusal Şifa',icon:'🌊'},
+      {id:'bagimlilik',name:'Bağımlılık & Dönüşüm',icon:'⛓'},
+      {id:'norobilim',name:'Nörobilim & Zihin',icon:'🔬'},
+      {id:'pozitif',name:'Pozitif Psikoloji',icon:'☀️'},
+      {id:'golge',name:'Gölge Çalışması',icon:'🌑'},
+      {id:'icsel',name:'İçsel Çocuk Çalışması',icon:'🧸'},
+      {id:'duygusal',name:'Duygusal Zeka',icon:'❤️'},
+      {id:'stres',name:'Stres & Anksiyete',icon:'🌪'},
+      {id:'psikosomatik',name:'Psikosomatik Hastalıklar',icon:'🩹'}
     ]
   },
-  ezoterizm:{
-    title:'Ezoterizm & Okült',emoji:'🔮',num:'04',
-    desc:'Gizli öğretiler, kadim semboller ve kehanet sanatları. Görünmeyen gerçekliğin katmanlarını araştıranlar için kapsamlı bir rehber.',
+  ruh:{
+    title:'Ruhsal & Spiritüel Gelişim',emoji:'🧘',num:'02',
+    desc:'Farkındalık, içsel uyanış ve kadim öğretiler. Ruhsal dengenizi bulmak için rehberiniz.',
+    color:'rgba(201,168,76,.08)',
+    subcats:[
+      {id:'meditasyon',name:'Meditasyon Teknikleri',icon:'🧘'},
+      {id:'farkindalik',name:'Farkındalık (Mindfulness)',icon:'👁'},
+      {id:'enerji_calisma',name:'Enerji Çalışmaları',icon:'✨'},
+      {id:'cakra',name:'Çakra Sistemleri',icon:'🌈'},
+      {id:'kundalini',name:'Kundalini & Enerji Uyanışı',icon:'🐍'},
+      {id:'uyanis',name:'Spiritüel Uyanış Süreçleri',icon:'🦋'},
+      {id:'tasavvuf',name:'Sufizm & Tasavvuf',icon:'🌙'},
+      {id:'dogu',name:'Doğu Öğretileri',icon:'☯'},
+      {id:'samanizm',name:'Şamanizm & Ritüeller',icon:'🥁'},
+      {id:'mantra',name:'Dualar & Mantralar',icon:'📿'}
+    ]
+  },
+  enerji:{
+    title:'Enerji & Frekans',emoji:'⚡',num:'03',
+    desc:'Görünmeyen titreşimsel anatomi ve ince beden çalışmaları.',
     color:'rgba(100,50,150,.08)',
     subcats:[
-      {id:'okultizm',name:'Okültizm & Hermetizm',icon:'🔮'},
-      {id:'astroloji',name:'Astroloji',icon:'⭐'},
-      {id:'tarot',name:'Tarot & Kehanet',icon:'🃏'},
-      {id:'numeroloji',name:'Numeroloji',icon:'🔢'},
-      {id:'sembolizm',name:'Sembolizm & Arketip',icon:'⚜'},
+      {id:'reiki',name:'Reiki & Enerji Şifası',icon:'✋'},
+      {id:'bioenerji',name:'Bioenerji',icon:'💫'},
+      {id:'frekans',name:'Frekans Terapileri',icon:'📻'},
+      {id:'ses',name:'Ses Terapisi',icon:'🎶'},
+      {id:'kristal',name:'Kristaller & Taşlar',icon:'💎'},
+      {id:'aura',name:'Aura & Enerji Alanı',icon:'✨'},
+      {id:'kuantum',name:'Kuantum Şifa',icon:'⚛'}
     ]
   },
-  tarih:{
-    title:'Tarih, Felsefe & Kültür',emoji:'🏛',num:'05',
-    desc:'Antik medeniyetler, büyük düşünürler, mitoloji ve insanlığın entelektüel mirası. Geçmişin bilgeliğinde günümüze ışık tutan yazılar.',
-    color:'rgba(120,90,50,.08)',
+  doga:{
+    title:'Doğal & Alternatif Tıp',emoji:'🌿',num:'04',
+    desc:'Yeryüzünün şifa kaynakları ve binlerce yıllık kadim tıbbi gelenekler.',
+    color:'rgba(61,90,69,.1)',
     subcats:[
-      {id:'felsefe',name:'Felsefe',icon:'🏛'},
-      {id:'antik',name:'Antik Medeniyetler',icon:'🗿'},
-      {id:'mitoloji',name:'Mitoloji',icon:'🌍'},
-      {id:'edebiyat',name:'Kadim Edebiyat',icon:'📜'},
+      {id:'fitoterapi',name:'Fitoterapi (Bitkiler)',icon:'🌿'},
+      {id:'aromaterapi',name:'Aromaterapi',icon:'🌸'},
+      {id:'homeopati',name:'Homeopati',icon:'💧'},
+      {id:'ayurveda',name:'Ayurveda',icon:'🌱'},
+      {id:'cin_tibbi',name:'Geleneksel Çin Tıbbı',icon:'🍵'},
+      {id:'detoks',name:'Detoks & Arınma',icon:'🍃'},
+      {id:'oruc',name:'Oruç & Açlık Terapileri',icon:'⏳'},
+      {id:'takviye',name:'Doğal Takviyeler',icon:'💊'}
     ]
   },
-  donusum:{
-    title:'Kişisel Dönüşüm & Yaşam',emoji:'🌱',num:'06',
-    desc:'Anlam arayışı, ilişkiler, bereket bilinci ve modern yaşamda iç dönüşüm. Daha dolu ve farkında bir yaşam için pratik ve derinlikli yazılar.',
+  beden:{
+    title:'Beslenme & Beden',emoji:'🥗',num:'05',
+    desc:'Hücresel sağlık, mikrobiyom ve içsel sistemlerin biyolojik işleyişi.',
     color:'rgba(50,100,60,.08)',
     subcats:[
-      {id:'anlam',name:'Anlam Arayışı',icon:'🌱'},
-      {id:'bereket',name:'Bereket Bilinci',icon:'🌿'},
-      {id:'iliskiler',name:'İlişkiler & Bağlanma',icon:'💞'},
-      {id:'gelisim',name:'Kişisel Gelişim',icon:'🦋'},
+      {id:'holistik_beslenme',name:'Holistik Beslenme',icon:'🥗'},
+      {id:'fonksiyonel',name:'Fonksiyonel Tıp Beslenmesi',icon:'🩺'},
+      {id:'vegan',name:'Vegan & Bitkisel',icon:'🥦'},
+      {id:'ketojenik',name:'Ketojenik & Özel Diyetler',icon:'🥑'},
+      {id:'sindirim',name:'Sindirim & Bağırsak',icon:'🦠'},
+      {id:'hormon',name:'Hormon Dengesi',icon:'⚖'},
+      {id:'su',name:'Su & Mineral Dengesi',icon:'💧'}
+    ]
+  },
+  hareket:{
+    title:'Hareket & Pratikler',emoji:'💪',num:'06',
+    desc:'Bedenin bilgeliğini uyandıran somatik ve fiziksel disiplinler.',
+    color:'rgba(120,90,50,.08)',
+    subcats:[
+      {id:'yoga',name:'Yoga',icon:'🧘‍♀️'},
+      {id:'nefes',name:'Nefes Çalışmaları',icon:'🫁'},
+      {id:'somatik',name:'Somatik Hareket',icon:'🌊'},
+      {id:'pilates',name:'Pilates & Esneklik',icon:'🤸‍♀️'},
+      {id:'topraklanma',name:'Doğa ile Hareket',icon:'👣'}
+    ]
+  },
+  bilinc:{
+    title:'Bilinç & Kozmos',emoji:'🌌',num:'07',
+    desc:'Evrensel döngüler, arketipler ve rüya boyutunun derinlikleri.',
+    color:'rgba(20,40,60,.08)',
+    subcats:[
+      {id:'ruya',name:'Rüya Çalışmaları',icon:'🌌'},
+      {id:'arketipler',name:'Arketipler & Ruhsal Haritalar',icon:'🎭'},
+      {id:'astroloji',name:'Astroloji & Kozmik Etkiler',icon:'⭐'}
     ]
   }
 };
@@ -646,11 +713,11 @@ const CATEGORIES = {
 // Article index
 const ARTICLES = {
   anice:{
-    id:'anice',cat:'maneviyat',subcat:'budizm',
+    id:'anice',cat:'ruh',subcat:'dogu',
     title:'Aniçe: Her Şeyin Geçiciliğini Kucaklamak',
     titleEm:'geçiciliğini kucaklamak',
     titlePlain:'Aniçe: Her Şeyin',
-    tag:'☯ Budizm & Zen',read:'12 dk',sources:14,
+    tag:'☯ Doğu Öğretileri',read:'12 dk',sources:14,
     img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
     desc:'Buda\'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.',
     body:`
@@ -667,11 +734,11 @@ const ARTICLES = {
     sourceList:['Dhammapada (Buda\'nın sözleri, MÖ 3. yüzyıl)','Thich Nhat Hanh — Farkındalığın Mucizesi','Dalai Lama — Yeni Binyılın Değerleri','Osho — Farkındalık: Dengeli Yaşamanın Anahtarı','Alan W. Watts — Zen Yolu']
   },
   golge:{
-    id:'golge',cat:'zihin',subcat:'psikoloji',
+    id:'golge',cat:'zihin',subcat:'golge',
     title:'Jung\'un Gölge Arketipi: Kendi Karanlığınla Yüzleşmek',
     titleEm:'Kendi Karanlığınla Yüzleşmek',
     titlePlain:'Jung\'un Gölge Arketipi:',
-    tag:'🧠 Derinlik Psikolojisi',read:'10 dk',sources:9,
+    tag:'🌑 Gölge Çalışması',read:'10 dk',sources:9,
     img:'https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=1200&q=80',
     desc:'Carl Gustav Jung\'un gölge çalışmasının dönüştürücü gücü ve kolektif bilinçdışı üzerine.',
     body:`
@@ -688,11 +755,11 @@ const ARTICLES = {
     sourceList:['Carl Gustav Jung — Psikoloji ve Simya','Robert A. Johnson — Gölgemizi Yemek','Marie-Louise von Franz — Gölge ve Kötülük','James Hollis — Karanlıkta Işık Aramak','Marie-Louise von Franz — Psikoloji ve Din']
   },
   hermes:{
-    id:'hermes',cat:'ezoterizm',subcat:'okultizm',
+    id:'hermes',cat:'bilinc',subcat:'arketipler',
     title:'Hermes Trismegistus ve Kadim Bilgeliğin Dili',
     titleEm:'Kadim Bilgeliğin Dili',
     titlePlain:'Hermes Trismegistus ve',
-    tag:'🔮 Okültizm & Hermetizm',read:'15 dk',sources:11,
+    tag:'🎭 Arketipler',read:'15 dk',sources:11,
     img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',
     desc:'Hermetik felsefenin kökleri ve "Yukarıda ne varsa aşağıda da odur" ilkesinin derinlikleri.',
     body:`
@@ -709,11 +776,11 @@ const ARTICLES = {
     sourceList:['Kybalion — Three Initiates','The Emerald Tablet — Dennis William Hauck','Hermetica — Brian Copenhaver','Frances Yates — Giordano Bruno ve Hermetik Gelenek','Manly P. Hall — Tüm Çağların Gizli Öğretileri']
   },
   nlp:{
-    id:'nlp',cat:'saglik',subcat:'nlp',
+    id:'nlp',cat:'zihin',subcat:'bilincalti',
     title:'NLP ile Zihin Programlama: Kökler ve Pratik',
     titleEm:'Kökler ve Pratik',
     titlePlain:'NLP ile Zihin Programlama:',
-    tag:'🧠 NLP',read:'8 dk',sources:7,
+    tag:'🧠 Bilinçaltı & Reprogramlama',read:'8 dk',sources:7,
     img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
     desc:'Nöro-linguistik programlamanın temelleri ve günlük yaşamda dönüştürücü etkileri.',
     body:`
@@ -730,7 +797,7 @@ const ARTICLES = {
     sourceList:['Richard Bandler & John Grinder — Kurbağalardan Prenslere','Steve Andreas & Charles Faulkner — NLP: Yeni Teknoloji','Robert Dilts — Değişim İçin Stratejiler','Joseph O\'Connor & John Seymour — NLP\'ye Giriş','Tony Robbins — Sınırsız Güç']
   },
   saman:{
-    id:'saman',cat:'maneviyat',subcat:'samanizm',
+    id:'saman',cat:'ruh',subcat:'samanizm',
     title:'Şaman Yolculuğu: Üç Dünya Kozmolojisi',
     titleEm:'Üç Dünya Kozmolojisi',
     titlePlain:'Şaman Yolculuğu:',
@@ -751,7 +818,7 @@ const ARTICLES = {
     sourceList:['Michael Harner — Şamanın Yolu','Sandra Ingerman — Ruh Geri Getirme','Mircea Eliade — Şamanizm: Arkaik Vecd Teknikleri','Tom Cowan — Şamanizm: Ruhsal Şifaya Giden Yol','Alberto Villoldo — Şaman, Hekim, Bilge']
   },
   astroloji:{
-    id:'astroloji',cat:'ezoterizm',subcat:'astroloji',
+    id:'astroloji',cat:'bilinc',subcat:'astroloji',
     title:'Doğum Haritası: Gökyüzünün Sana Anlattıkları',
     titleEm:'Gökyüzünün Sana Anlattıkları',
     titlePlain:'Doğum Haritası:',
@@ -773,27 +840,40 @@ const ARTICLES = {
   }
 };
 
-// Articles by category/subcat
+// Articles mapped to the 7 new pillars
 const CAT_ARTICLES = {
-  maneviyat:{
+  zihin:{
+    tumu:['golge','nlp'],
+    bilincalti:['nlp'], travma:[], bagimlilik:[], norobilim:[], pozitif:[], golge:['golge'], icsel:[], duygusal:[], stres:[], psikosomatik:[]
+  },
+  ruh:{
     tumu:['anice','saman'],
-    budizm:['anice'],
-    samanizm:['saman'],
-    hinduizm:[],tasavvuf:[],kabala:[],gnostisizm:[]
+    meditasyon:[], farkindalik:[], enerji_calisma:[], cakra:[], kundalini:[], uyanis:[], tasavvuf:[], dogu:['anice'], samanizm:['saman'], mantra:[]
   },
-  saglik:{
-    tumu:['nlp'],
-    nlp:['nlp'],yoga:[],eft:[],hipnoterapi:[],reiki:[],travma:[],
-    aromaterapi:[],beslenme:[],alternatif:[],nefes:[],somatik:[] // YENİ EKLENEN BOŞ DİZİLER
+  enerji:{
+    tumu:[],
+    reiki:[], bioenerji:[], frekans:[], ses:[], kristal:[], aura:[], kuantum:[]
   },
-  zihin:{tumu:['golge'],psikoloji:['golge'],ruyalar:[],kuantum:[],metafizik:[],parapsikoloji:[]},
-  ezoterizm:{tumu:['hermes','astroloji'],okultizm:['hermes'],astroloji:['astroloji'],tarot:[],numeroloji:[],sembolizm:[]},
-  tarih:{tumu:[],felsefe:[],antik:[],mitoloji:[],edebiyat:[]},
-  donusum:{tumu:[],anlam:[],bereket:[],iliskiler:[],gelisim:[]}
+  doga:{
+    tumu:[],
+    fitoterapi:[], aromaterapi:[], homeopati:[], ayurveda:[], cin_tibbi:[], detoks:[], oruc:[], takviye:[]
+  },
+  beden:{
+    tumu:[],
+    holistik_beslenme:[], fonksiyonel:[], vegan:[], ketojenik:[], sindirim:[], hormon:[], su:[]
+  },
+  hareket:{
+    tumu:[],
+    yoga:[], nefes:[], somatik:[], pilates:[], topraklanma:[]
+  },
+  bilinc:{
+    tumu:['hermes','astroloji'],
+    ruya:[], arketipler:['hermes'], astroloji:['astroloji']
+  }
 };
 
 // ══════════════════════════════════════════════════════
-// NAVIGATION
+// NAVIGATION LOGIC
 // ══════════════════════════════════════════════════════
 let currentPage='home', currentCat='', currentSubcat='';
 
@@ -833,7 +913,7 @@ function showSubcat(catId, subcatId){
 function filterCat(subcatId){
   currentSubcat=subcatId;
   const cat=CATEGORIES[currentCat];
-  // update pills
+  
   document.querySelectorAll('.subcat-pill').forEach(p=>{
     p.classList.toggle('active', p.textContent.trim().includes(subcatId==='tumu'?'Tümü':cat.subcats.find(s=>s.id===subcatId)?.name||'__'));
     if(subcatId==='tumu' && p.textContent.includes('Tümü')) p.classList.add('active');
@@ -849,7 +929,6 @@ function renderCatArticles(catId, subcatId){
   container.innerHTML='';
 
   if(subcatId==='tumu'){
-    // Show each subcat section
     cat.subcats.forEach(s=>{
       const ids=CAT_ARTICLES[catId]?.[s.id]||[];
       if(!ids.length) return;
