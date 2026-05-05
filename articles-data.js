@@ -125,70 +125,27 @@ const ARTICLES_DATA = [
     img:'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1200&q=80',
     desc:'Csikszentmihalyi\'nin akış teorisi, geçici hipofrontalite ve Zen\'in "Wu Wei" öğretisi — bilim ile spiritüalitenin optimal deneyimde buluştuğu nokta.',
     body:`<p class="article-lead">Bazen öyle anlar olur: kalem kendi kendine yazar, eller kendi kendine çalar, beden kendi kendine koşar. "Ben" kaybolur. Sadece eylem kalır. Bu an — bilimin "akış", kadim bilgeliğin "Samadhi" ya da "Wu" dediği an — insan deneyiminin en saf formudur.</p>
-
 <p>Macar-Amerikalı psikolog <strong>Mihaly Csikszentmihalyi</strong> onlarca yıl boyunca ressam, cerrah, satranç ustası ve dağcılarla görüştü. Hepsinin tarif ettiği deneyim özünde aynıydı: zaman durur, öz-bilinç solar, eylem ile eyleyen arasındaki sınır ortadan kalkar. Csikszentmihalyi buna <em>flow</em> — akış — adını verdi. Ama bu deneyimi ilk keşfeden o değildi. Binlerce yıl önce, Himalaya'nın yamaçlarında ve Çin'in meditasyon kulübelerinde, aynı hal farklı bir dille anlatılmıştı.</p>
-
 <div class="article-sep">· · ·</div>
-
 <h2 class="article-h2">Goldilocks Bölgesi: Ne Çok Kolay, Ne Çok Zor</h2>
-
 <p>Akışın kapısı, hassas bir denge noktasında açılır. Bir görev yeteneklerinizin çok altındaysa sıkılırsınız. Çok üzerindeyse kaygılanırsınız. Ama görevin zorluk derecesi mevcut becerilerinizi yaklaşık <strong>%4 oranında aştığında</strong>, zihin o nadir "Goldilocks Bölgesi"ne girer — ne donup kalır ne de uyuşur. Tam anlamıyla uyanır.</p>
-
-<p>Sinirbilimciler bu noktada beyinde ilginç bir şey olduğunu keşfetti: <strong>Sistem 1</strong> (hızlı, sezgisel, otomatik) ve <strong>Sistem 2</strong> (yavaş, analitik, bilinçli) modları kusursuz bir senkronizasyona girer. Beden bildiğini yapar; zihin buna ortak olur ama araya girmez. Daniel Kahneman'ın iki sistem teorisi açısından bakıldığında, akış aslında bu iki sistemin çatışma yaşamadığı ender hallerden biridir.</p>
-
+<p>Sinirbilimciler bu noktada beyinde ilginç bir şey olduğunu keşfetti: <strong>Sistem 1</strong> (hızlı, sezgisel, otomatik) ve <strong>Sistem 2</strong> (yavaş, analitik, bilinçli) modları kusursuz bir senkronizasyona girer. Beden bildiğini yapar; zihin buna ortak olur ama araya girmez.</p>
 <h2 class="article-h2">Geçici Hipofrontalite: İç Sesin Susması</h2>
-
-<p>Akışın en çarpıcı nörolojik bulgularından biri, <strong>prefrontal korteks</strong> aktivitesinin belirgin biçimde azalmasıdır. Bu bölge; öz-eleştiri, sosyal kaygı, gelecek planlaması ve "başkaları beni nasıl görüyor?" sorularının yuvası. Akış sırasında bu bölge sakinleşir — araştırmacıların "geçici hipofrontalite" dediği bu fenomen, bireyi kendi iç gürültüsünden özgür kılar.</p>
-
-<p>Bu sessizlik bir boşluk değildir. Aksine, beyin o anda adeta bir <em>elektrokimyasal senfoni</em> çalmaktadır:</p>
-
-<p><strong>Dopamin</strong> odaklanmayı derinleştirir ve her ilerlemeyi küçük bir ödülle pekiştirir. <strong>Norepinefrin</strong> dikkati lazer gibi tek bir noktaya sabitler. <strong>Anandamid</strong> — adını Sanskritçe "sonsuz mutluluk" anlamındaki <em>ananda</em>'dan alan bu molekül — yaratıcı bağlantılar kurma kapasitesini artırırken acı eşiğini yükseltir. <strong>Endorfin ve serotonin</strong> ise deneyim boyunca ve sonrasında derin bir doyum zemini oluşturur.</p>
-
-<p>Steven Kotler bu nörokokteyli şöyle özetler: akış, insan beyninin erişebileceği en güçlü değişmiş bilinç hallerinden biridir — ve üstelik tamamen doğal, tamamen içseldir.</p>
-
+<p>Akışın en çarpıcı nörolojik bulgularından biri, <strong>prefrontal korteks</strong> aktivitesinin belirgin biçimde azalmasıdır. Bu bölge; öz-eleştiri, sosyal kaygı, gelecek planlaması ve "başkaları beni nasıl görüyor?" sorularının yuvası. Akış sırasında bu bölge sakinleşir.</p>
+<p><strong>Dopamin</strong> odaklanmayı derinleştirir. <strong>Norepinefrin</strong> dikkati tek bir noktaya sabitler. <strong>Anandamid</strong> yaratıcı bağlantılar kurma kapasitesini artırır. <strong>Endorfin ve serotonin</strong> derin bir doyum zemini oluşturur.</p>
 <div class="article-sep">· · ·</div>
-
 <h2 class="article-h2">Zen ve "Acemi Zihni": Bilmemenin Bilgeliği</h2>
-
-<p>Zen ustası <strong>Shunryu Suzuki</strong> şöyle der: "Acemi zihninde pek çok olasılık vardır; uzman zihninde ise yalnızca birkaç tane." Bu paradoks, akışın ruhunu tam olarak yakalar. Akışa giren kişi, bilgisini geride bırakmaz — onu aşar. Bilgi artık düşünülmesi gereken bir şey değil, akmaya devam eden bir nehirdir.</p>
-
-<p>Zen felsefesindeki <strong>Shoshin</strong> (acemi zihni) kavramı, her anı ilk kez yaşanıyormuş gibi karşılamayı öğretir. Yargı, beklenti ve önceki deneyimin ağırlığı olmadan. Bu yaklaşım, sinirbilimin "geçici hipofrontalite" dediği şeyin bilinçli olarak kültive edilmiş halidir — prefrontal korteksin susturulması, ancak bu kez yıllar süren pratikle, kasıtlı olarak.</p>
-
+<p>Zen ustası <strong>Shunryu Suzuki</strong> şöyle der: "Acemi zihninde pek çok olasılık vardır; uzman zihninde ise yalnızca birkaç tane." Zen felsefesindeki <strong>Shoshin</strong> (acemi zihni) kavramı, her anı ilk kez yaşanıyormuş gibi karşılamayı öğretir.</p>
 <blockquote><p>"Zihin bir ayna gibi olmalı — tutmamalı, reddetmemeli, yalnızca yansıtmalı."</p><cite>— Bruce Lee (Jeet Kune Do felsefesinden)</cite></blockquote>
-
 <h2 class="article-h2">Samadhi, Wu ve Anatta: Doğu'nun Üç Anahtarı</h2>
-
-<p>Budist gelenekte akışın karşılığı <strong>Samadhi</strong>'dir — zihnin tek bir nesneyle tam birleşimi. Meditasyon pratiğinin en derin katmanlarından biri olan Samadhi'de özne-nesne ayrımı çözülür. Meditasyoncu artık nefesi izlemez; nefes olur. Bu, Csikszentmihalyi'nin tanımıyla neredeyse kelimesi kelimesine örtüşür: "eylem ile farkındalığın birleşmesi."</p>
-
-<p>Taoizm'deki <strong>Wu Wei</strong> (eylemsiz eylem ya da çabasız çaba) kavramı da aynı gerçeği farklı bir açıdan ele alır. Su nasıl taşların etrafından zahmetsizce akıyorsa, akıştaki bir usta da dirençle değil uyumla hareket eder. Müzisyen notaları çalmaz — notalar onun aracılığıyla çalar. Budizm'in <strong>Anatta</strong> (benliksizlik) öğretisi ise bu deneyimin metafizik temelini kurar: "ben" zaten bir kurgu idi; akış, bu kurgunun geçici olarak askıya alınmasıdır.</p>
-
-<p>Hint geleneğinde <strong>Prana</strong> (yaşam enerjisi) ve Çin geleneğinde <strong>Chi</strong> kavramları da aynı fenomene işaret eder: akış halindeki bir cerrah, bir dansçı ya da bir demirci, yalnızca kendi becerilerini sergilemez. Evrensel bir enerjinin kendisi aracılığıyla akmasına izin verir.</p>
-
+<p>Budist gelenekte akışın karşılığı <strong>Samadhi</strong>'dir — zihnin tek bir nesneyle tam birleşimi. Taoizm'deki <strong>Wu Wei</strong> (eylemsiz eylem) kavramı da aynı gerçeği farklı bir açıdan ele alır. Budizm'in <strong>Anatta</strong> (benliksizlik) öğretisi ise bu deneyimin metafizik temelini kurar.</p>
 <div class="article-sep">· · ·</div>
-
-<h2 class="article-h2">Akışa Giren Zihin: Zaman Nasıl Bükülür?</h2>
-
-<p>Akış halinin en gizemli özelliklerinden biri <strong>zamansal tahrifat</strong>dır. Saatler saniyeler gibi, ya da bazen saniyeler bir ömür gibi geçer. Bu deneyim öylesine evrenseldir ki hem nörobilim hem de mistik gelenekler onu merkeze alır.</p>
-
-<p>Nörolojik açıdan açıklama şudur: beyin yoğun veri işleme moduna geçtiğinde, zaman algısını inşa eden "iç saat" mekanizmaları arka plana çekilir. Beyin, saatleri değil anı işler. Budist pratikte ise bu "şimdi"nin genişlemesi, aydınlanmanın ön kapısı olarak görülür. <strong>Thich Nhat Hanh</strong> bunu şöyle ifade eder: "Gelecek henüz gelmedi, geçmiş artık geçti. Yaşayabileceğiniz tek an şimdiki andır."</p>
-
-<p>Bu iki perspektif birbirini açıklar: beyin "şimdi"ye tam odaklandığında zaman algısı dönüşür; spiritüel pratik de tam bu odaklanmayı kültive etmeyi hedefler. Araç farklı, varış aynı.</p>
-
 <h2 class="article-h2">Akışa Açılan Kapılar: Pratik Tetikleyiciler</h2>
-
-<p>Steven Kotler ve Flow Research Collective'in araştırmaları, akışı tetikleyen belirli koşulları ortaya koymuştur. <strong>Net hedefler</strong> — ne yaptığınızı ve neden yaptığınızı net bilmek — zihnin önündeki sisi dağıtır. <strong>Anlık geri bildirim</strong> — her adımın sonucunu hemen görmek — sistemi kalibre eder. <strong>Kontrol duygusu</strong> — sonucu etkileyebileceğinize olan inanç — kaygıyı dengeler.</p>
-
-<p>Meditasyon geleneği bu tetikleyicileri binlerce yıl önce keşfetmişti: Zazen'deki tek bir nesneye odaklanma net hedeftir. Nefes farkındalığı anlık geri bildirimdir. "Şimdi burada olmak" ise tam anlamıyla kontrol duygusunun içselleştirilmesidir.</p>
-
+<p><strong>Net hedefler</strong> — ne yaptığınızı ve neden yaptığınızı net bilmek — zihnin önündeki sisi dağıtır. <strong>Anlık geri bildirim</strong> — her adımın sonucunu hemen görmek — sistemi kalibre eder. <strong>Kontrol duygusu</strong> — sonucu etkileyebileceğinize olan inanç — kaygıyı dengeler.</p>
 <blockquote><p>"Mutluluk, arayarak bulunmaz. Tam anlamıyla bir şeyle meşgul olmanın yan ürünüdür."</p><cite>— Mihaly Csikszentmihalyi</cite></blockquote>
-
 <h2 class="article-h2">Öz-Gerçekleştirmenin Somut Hali</h2>
-
-<p>Abraham Maslow'un ihtiyaçlar hiyerarşisinin zirvesi olan <strong>"öz-gerçekleştirme"</strong> çoğu zaman soyut bir kavram olarak kalır. Akış hali ise bu kavrama somut bir beden kazandırır. Maslow'un sonraki dönemde tanımladığı <strong>"zirve deneyimler"</strong> (peak experiences) — sınırların yok olduğu, anlam ve güzelliğin öne çıktığı o nadir anlar — akış halinin duygusal boyutudur.</p>
-
-<p>Pozitif psikolojinin kurucularından <strong>Martin Seligman</strong>, PERMA modelinde akışı (engagement) refahın beş temel unsurundan biri olarak konumlandırır. Çünkü akış anında ne geçmiş ne gelecek sizi esir alır; tam anlamıyla <em>yaşıyorsunuzdur</em>.</p>
-
-<p class="article-closing">Beyin prefrontal korteksi sessizleştirirken, Zen acemi zihnini kültive eder. Dopamin ödül devrelerini ateşlerken, Taoizm Wu Wei'nin suyunu akıtır. Farklı diller, farklı haritalar — ama hepsi aynı dağı gösteriyor. Akış, insan olmanın en kalabalık ve en sessiz anıdır aynı anda. Ve belki de bu yüzden, bir kez tadıldığında, bir daha vazgeçilemiyor.</p>`,
+<p>Abraham Maslow'un ihtiyaçlar hiyerarşisinin zirvesi olan <strong>"öz-gerçekleştirme"</strong> çoğu zaman soyut bir kavram olarak kalır. Akış hali ise bu kavrama somut bir beden kazandırır. <strong>Martin Seligman</strong>, PERMA modelinde akışı refahın beş temel unsurundan biri olarak konumlandırır.</p>
+<p class="article-closing">Beyin prefrontal korteksi sessizleştirirken, Zen acemi zihnini kültive eder. Dopamin ödül devrelerini ateşlerken, Taoizm Wu Wei'nin suyunu akıtır. Farklı diller, farklı haritalar — ama hepsi aynı dağı gösteriyor.</p>`,
     sourceList:[
       'Mihaly Csikszentmihalyi — Flow: The Psychology of Optimal Experience',
       'Steven Kotler — The Rise of Superman',
