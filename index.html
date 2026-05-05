@@ -419,27 +419,27 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-main" id="hero-main-link">
-      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="">
+    <a class="hero-main" id="hero-main-link" href="#">
+      <img id="hero-main-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="">
       <div class="hero-content">
         <div class="tag" id="hero-main-tag">✦ Öne Çıkan</div>
-        <h2 class="hero-title" id="hero-main-title">Yükleniyor…</h2>
+        <h2 class="hero-title" id="hero-main-title"><em>Yükleniyor…</em></h2>
         <p class="hero-meta" id="hero-main-meta"></p>
       </div>
-    </div>
+    </a>
     <div class="hero-side" id="hero-side-container">
-      <div class="hero-card">
+      <div class="hero-card" id="hero-card-0">
         <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag"></div>
-          <div class="hero-card-title"></div>
+          <div class="tag" id="hero-card-tag-0"></div>
+          <div class="hero-card-title" id="hero-card-title-0"></div>
         </div>
       </div>
-      <div class="hero-card">
+      <div class="hero-card" id="hero-card-1">
         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag"></div>
-          <div class="hero-card-title"></div>
+          <div class="tag" id="hero-card-tag-1"></div>
+          <div class="hero-card-title" id="hero-card-title-1"></div>
         </div>
       </div>
     </div>
@@ -476,11 +476,9 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
         <div class="banner-sub">Her yazı gerçek kitap kaynaklarına dayandırılarak hazırlanmaktadır.<br>Spiritüel yolculuğunuz için güvenilir bir rehber.</div>
       </div>
       <div class="banner-stats">
-        <div class="stat"><div class="stat-num">3568</div><div class="stat-label">Kaynak Kitap</div></div>
-        <div class="stat-sep"></div>
         <div class="stat"><div class="stat-num">6</div><div class="stat-label">Ana Kategori</div></div>
         <div class="stat-sep"></div>
-        <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Alt Başlık</div></div>
+        <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Alt Başlık</div></div>
       </div>
     </div>
   </div>
@@ -916,39 +914,38 @@ async function loadArticles() {
 
 function renderHomeCards() {
   const allArr = Object.values(ARTICLES);
+  if(!allArr.length) return;
 
   // Son yazılar grid
   const grid = document.getElementById('home-latest-grid');
-  if (grid) grid.innerHTML = allArr.slice(0,6).map(a => articleCard(a)).join('') || '<div style="color:var(--muted);text-align:center;padding:2rem;font-family:var(--serif)">Henüz makale yok.</div>';
+  if(grid) grid.innerHTML = allArr.slice(0,6).map(a => articleCard(a)).join('') || '<div style="color:var(--muted);text-align:center;padding:3rem;font-family:var(--serif)">Henüz makale yok.</div>';
 
   // Hero ana kart
-  if (allArr.length > 0) {
-    const first = allArr[0];
-    const heroMain = document.getElementById('hero-main-link');
-    if (heroMain) {
-      heroMain.onclick = () => showArticle(first.id);
-      const img = heroMain.querySelector('img');
-      if (img) img.src = first.img;
-      const tag = document.getElementById('hero-main-tag');
-      if (tag) tag.textContent = first.tag;
-      const title = document.getElementById('hero-main-title');
-      if (title) title.innerHTML = first.titlePlain + '<br><em>' + first.titleEm + '</em>';
-      const meta = document.getElementById('hero-main-meta');
-      if (meta) meta.textContent = first.read + ' okuma · ' + first.sources + ' kaynak kitap';
-    }
+  const first = allArr[0];
+  const heroLink = document.getElementById('hero-main-link');
+  if(heroLink){
+    heroLink.onclick = (e) => { e.preventDefault(); showArticle(first.id); };
+    const img = document.getElementById('hero-main-img') || heroLink.querySelector('img');
+    if(img) img.src = first.img;
+    const tag = document.getElementById('hero-main-tag');
+    if(tag) tag.textContent = first.tag;
+    const title = document.getElementById('hero-main-title');
+    if(title) title.innerHTML = (first.titlePlain||'') + (first.titlePlain?'<br>':'') + '<em>' + (first.titleEm||first.title) + '</em>';
+    const meta = document.getElementById('hero-main-meta');
+    if(meta) meta.textContent = first.read + ' okuma · ' + first.sources + ' kaynak kitap';
   }
 
   // Hero yan kartlar
-  const sideCards = document.querySelectorAll('.hero-card');
   allArr.slice(1,3).forEach((a,i) => {
-    if (!sideCards[i]) return;
-    sideCards[i].onclick = () => showArticle(a.id);
-    const img = sideCards[i].querySelector('img');
-    const tag = sideCards[i].querySelector('.tag');
-    const title = sideCards[i].querySelector('.hero-card-title');
-    if (img) img.src = a.img;
-    if (tag) tag.textContent = a.tag;
-    if (title) title.textContent = a.title;
+    const card = document.getElementById('hero-card-'+i);
+    if(!card) return;
+    card.onclick = () => showArticle(a.id);
+    const img = card.querySelector('img');
+    if(img) img.src = a.img;
+    const tag = document.getElementById('hero-card-tag-'+i);
+    if(tag) tag.textContent = a.tag;
+    const title = document.getElementById('hero-card-title-'+i);
+    if(title) title.textContent = a.title;
   });
 }
 
