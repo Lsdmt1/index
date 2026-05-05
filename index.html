@@ -898,18 +898,130 @@ function buildCatArticles(articlesArr) {
   return ca;
 }
 
-async function loadArticles() {
-  try {
-    const res = await fetch('articles.json');
-    const arr = await res.json();
-    // Objeye çevir
-    arr.forEach(a => { ARTICLES[a.id] = a; });
-    CAT_ARTICLES = buildCatArticles(arr);
-    // Site hazır — hero kartlarını ve son yazıları render et
-    renderHomeCards();
-  } catch(e) {
-    console.error('articles.json yüklenemedi:', e);
+// ══════════════════════════════════════════════════════
+// ARTICLES DATA — buraya yeni makale ekle
+// ══════════════════════════════════════════════════════
+const ARTICLES_DATA = [
+  {
+    id:'anice', cat:'maneviyat', subcat:'budizm',
+    title:'Aniçe: Her Şeyin Geçiciliğini Kucaklamak',
+    titlePlain:'Aniçe: Her Şeyin',
+    titleEm:'geçiciliğini kucaklamak',
+    tag:'☯ Budizm & Zen', read:'12 dk', sources:14,
+    img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
+    desc:'Buda\'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.',
+    body:`<p class="article-lead">Sabah kahveni içerken masanın üzerindeki buharın yükselişini izledin mi hiç? O ince beyaz kıvrım — doğar, yükselir, dağılır. Saniyeler içinde. Ne kadar direnirsek direnelim, buhar gider.</p>
+<p>Budizm buna bir isim koymuştur: <strong>Aniçe</strong>. Pali dilinde "geçicilik" anlamına gelir. Buda'nın öğretilerinin tam merkezinde durur.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Geçicilik neden bu kadar zor?</h2>
+<p>İnsan zihni, doğası gereği kalıcılık arar. <strong>Thich Nhat Hanh</strong> bunu şöyle açıklar: tutunma, bir şeyin gerçekte ne olduğunu görmemizi engeller.</p>
+<blockquote><p>"Her şey geçicidir. Bunu anlayan kişi acının üzerinden geçer."</p><cite>— Dhammapada</cite></blockquote>
+<h2 class="article-h2">Bırakmak, kaybetmek değildir</h2>
+<p>Aniçe öğretisi şunu söyler: bir şeyin geçici olduğunu kabul etmek, onu daha tam yaşamamızı sağlar. <strong>Osho'nun</strong> dediği gibi: gerçek aşk serbest bırakır.</p>
+<p class="article-closing">Sabah kahvenizdeki buharı bir daha izlediğinizde, belki bu kez ona direnmek yerine yükselişini takip edersiniz. Doğar. Yükselir. Dağılır.</p>`,
+    sourceList:['Dhammapada (Buda\'nın sözleri, MÖ 3. yüzyıl)','Thich Nhat Hanh — Farkındalığın Mucizesi','Dalai Lama — Yeni Binyılın Değerleri','Osho — Farkındalık: Dengeli Yaşamanın Anahtarı','Alan W. Watts — Zen Yolu']
+  },
+  {
+    id:'golge', cat:'zihin', subcat:'psikoloji',
+    title:'Jung\'un Gölge Arketipi: Kendi Karanlığınla Yüzleşmek',
+    titlePlain:'Jung\'un Gölge Arketipi:',
+    titleEm:'Kendi Karanlığınla Yüzleşmek',
+    tag:'🧠 Derinlik Psikolojisi', read:'10 dk', sources:9,
+    img:'https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=1200&q=80',
+    desc:'Carl Gustav Jung\'un gölge çalışmasının dönüştürücü gücü ve kolektif bilinçdışı üzerine.',
+    body:`<p class="article-lead">Her insanın içinde bir gölge yaşar. Bastırdığımız öfke, inkâr ettiğimiz kıskançlık, kabul edemediğimiz arzular — hepsi orada, karanlığın içinde bekler.</p>
+<p><strong>Carl Gustav Jung</strong>, bu karanlık bölgeyi "gölge" olarak adlandırdı. Ego'nun dışında kalan, bilinçdışına itilmiş tüm içeriklerin toplamıdır gölge.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Gölge neden önemli?</h2>
+<p>Jung şöyle söyler: "En büyük kötülük, gölgeden habersiz olmaktır." Bizi en çok rahatsız eden insanlar, çoğunlukla bizim inkâr ettiğimiz nitelikleri taşıyanlardır.</p>
+<blockquote><p>"Birinin gölgesi olmadığı zaman, ışığı da olmaz."</p><cite>— Carl Gustav Jung</cite></blockquote>
+<h2 class="article-h2">Gölge çalışması nasıl yapılır?</h2>
+<p><strong>Robert A. Johnson</strong>'ın önerdiği yöntemle: sizi en çok rahatsız eden kişilikleri listeleyin. O özellikleri kendinizde aramaya başlayın.</p>
+<p class="article-closing">Gölgeyi kucaklamak, tüm karanlığı kabul etmek demek değildir. Onu tanımak, bütünleşmek ve özgürleşmek demektir.</p>`,
+    sourceList:['Carl Gustav Jung — Psikoloji ve Simya','Robert A. Johnson — Gölgemizi Yemek','Marie-Louise von Franz — Gölge ve Kötülük','James Hollis — Karanlıkta Işık Aramak']
+  },
+  {
+    id:'hermes', cat:'ezoterizm', subcat:'okultizm',
+    title:'Hermes Trismegistus ve Kadim Bilgeliğin Dili',
+    titlePlain:'Hermes Trismegistus ve',
+    titleEm:'Kadim Bilgeliğin Dili',
+    tag:'🔮 Okültizm & Hermetizm', read:'15 dk', sources:11,
+    img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',
+    desc:'Hermetik felsefenin kökleri ve "Yukarıda ne varsa aşağıda da odur" ilkesinin derinlikleri.',
+    body:`<p class="article-lead">"Yukarıda ne varsa, aşağıda da odur." Bu cümle, binlerce yıl önce yazılmış Zümrüt Tablet'ten gelmektedir.</p>
+<p><strong>Hermes Trismegistus</strong> — "Üç kez büyük Hermes" — efsanevi bir figürdür. Antik Mısır geleneğinde Thoth ile Yunan tanrısı Hermes'in bileşimi.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Yedi Hermetik İlke</h2>
+<p>Hermetizm, evrenin işleyişini yedi temel ilkeyle açıklar: Zihinsellik, Yazışma, Titreşim, Kutupsallık, Ritim, Nedensellik ve Cinsiyet.</p>
+<blockquote><p>"Zihin her şeydir; evren zihinseldir."</p><cite>— Kybalion</cite></blockquote>
+<h2 class="article-h2">Modern dünyada Hermetizm</h2>
+<p>Rönesans simyacıları ve bazı kuantum fizikçileri Hermetik metinlerden ilham almıştır.</p>
+<p class="article-closing">Zümrüt Tablet'in son satırı: "Güneş onun babası, Ay onun annesi." Evrenin ritmi hâlâ aynı.</p>`,
+    sourceList:['Kybalion — Three Initiates','The Emerald Tablet — Dennis William Hauck','Hermetica — Brian Copenhaver','Frances Yates — Giordano Bruno ve Hermetik Gelenek','Manly P. Hall — Tüm Çağların Gizli Öğretileri']
+  },
+  {
+    id:'nlp', cat:'saglik', subcat:'nlp',
+    title:'NLP ile Zihin Programlama: Kökler ve Pratik',
+    titlePlain:'NLP ile Zihin Programlama:',
+    titleEm:'Kökler ve Pratik',
+    tag:'🌿 Bütüncül Sağlık', read:'8 dk', sources:7,
+    img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
+    desc:'Nöro-linguistik programlamanın temelleri ve günlük yaşamda dönüştürücü etkileri.',
+    body:`<p class="article-lead">Dilimiz gerçekliği sadece anlatmaz — aynı zamanda inşa eder. NLP'nin temel iddiası budur.</p>
+<p><strong>Richard Bandler</strong> ve <strong>John Grinder</strong> tarafından 1970'lerde geliştirilen NLP, başarılı terapistlerin kalıplarını modellemeye dayanır.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Harita, arazi değildir</h2>
+<p>Her insanın gerçekliğin farklı bir "haritası" vardır. Sorunlar genellikle haritadaki kısıtlamalardan kaynaklanır.</p>
+<blockquote><p>"İnsanlar kırık değildir. Kullandıkları kalıplar değiştirilebilir."</p><cite>— Richard Bandler</cite></blockquote>
+<h2 class="article-h2">Yeniden Çerçeveleme</h2>
+<p>"Başarısız oldum" yerine "Neyin işe yaramadığını öğrendim" demek beynin farklı nöral yollar kullanmasını sağlar.</p>
+<p class="article-closing">Dil bir araçtır. Ama hangi aracı nasıl kullandığımız, inşa ettiğimiz yapıyı belirler.</p>`,
+    sourceList:['Richard Bandler & John Grinder — Kurbağalardan Prenslere','Steve Andreas & Charles Faulkner — NLP: Yeni Teknoloji','Robert Dilts — Değişim İçin Stratejiler','Tony Robbins — Sınırsız Güç']
+  },
+  {
+    id:'saman', cat:'maneviyat', subcat:'samanizm',
+    title:'Şaman Yolculuğu: Üç Dünya Kozmolojisi',
+    titlePlain:'Şaman Yolculuğu:',
+    titleEm:'Üç Dünya Kozmolojisi',
+    tag:'🥁 Şamanizm', read:'11 dk', sources:8,
+    img:'https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=1200&q=80',
+    desc:'Alt dünya, orta dünya, üst dünya ve modern insanın bu antik bilgelikle bağı.',
+    body:`<p class="article-lead">Davulun monoton ritmi başlar. Şaman gözlerini kapatır ve bir yolculuğa çıkar — başka bir gerçekliğin katmanlarını ziyaret etmek için.</p>
+<p>Şamanizm, insanlığın bilinen en eski spiritüel geleneğidir.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Üç Dünya</h2>
+<p><strong>Alt Dünya</strong>: ataların ve hayvan rehberlerin diyarı. <strong>Orta Dünya</strong>: yaşadığımız gerçeklik. <strong>Üst Dünya</strong>: öğretmen ruhların mekânı.</p>
+<blockquote><p>"Şaman, görünmeyen dünyaların avcısıdır."</p><cite>— Michael Harner</cite></blockquote>
+<h2 class="article-h2">Modern Şamanizm</h2>
+<p><strong>Sandra Ingerman</strong> ve <strong>Michael Harner</strong>'ın çalışmaları sayesinde şamanizm modern insana uyarlandı.</p>
+<p class="article-closing">Davul hâlâ çalıyor. İnsanlık başlangıcından bu yana aynı kapıyı aramaya devam ediyor.</p>`,
+    sourceList:['Michael Harner — Şamanın Yolu','Sandra Ingerman — Ruh Geri Getirme','Mircea Eliade — Şamanizm: Arkaik Vecd Teknikleri','Alberto Villoldo — Şaman, Hekim, Bilge']
+  },
+  {
+    id:'astroloji', cat:'ezoterizm', subcat:'astroloji',
+    title:'Doğum Haritası: Gökyüzünün Sana Anlattıkları',
+    titlePlain:'Doğum Haritası:',
+    titleEm:'Gökyüzünün Sana Anlattıkları',
+    tag:'⭐ Astroloji', read:'9 dk', sources:6,
+    img:'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1200&q=80',
+    desc:'Natal harita okuma temelleri ve gezegenlerin kişilik üzerindeki sembolik etkileri.',
+    body:`<p class="article-lead">Doğduğunuz an, gökyüzündeki bir fotoğraf çekilir. Gezegenlerin o anki konumu kişiliğinizin bir haritasını sunar.</p>
+<p>Batı astrolojisi 4.000 yıllık bir birikimin ürünüdür. Modern psikolojik astroloji <strong>Carl Jung</strong>'un arketip teorisiyle zenginleşmiştir.</p>
+<div class="article-sep">· · ·</div>
+<h2 class="article-h2">Üç Temel Bileşen</h2>
+<p><strong>Güneş burcu</strong>: temel kimlik. <strong>Ay burcu</strong>: duygusal dünya. <strong>Yükselen burç</strong>: dünyaya nasıl göründüğünüz.</p>
+<blockquote><p>"Yıldızlar eğilimi gösterir, zorunluluğu değil."</p><cite>— Dane Rudhyar</cite></blockquote>
+<h2 class="article-h2">Evler ve Gezegenler</h2>
+<p>Harita 12 eve bölünmüştür. Her gezegen bir evi ziyaret eder ve o alan üzerinde etkisini bırakır.</p>
+<p class="article-closing">Harita, kaderin ta kendisi değildir. Kendini tanımak için en eski aynalardan biri.</p>`,
+    sourceList:['Liz Greene — Satürn: Yeni Bir Bakış','Dane Rudhyar — Astroloji Kişiliğinin Yeniden Yorumlanması','Howard Sasportas — 12 Ev','Stephen Arroyo — Astroloji, Psikoloji ve Dört Element']
   }
+];
+
+function loadArticles() {
+  ARTICLES_DATA.forEach(a => { ARTICLES[a.id] = a; });
+  CAT_ARTICLES = buildCatArticles(ARTICLES_DATA);
+  renderHomeCards();
 }
 
 function renderHomeCards() {
