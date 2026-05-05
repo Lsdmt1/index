@@ -49,8 +49,8 @@ nav{display:flex;gap:0;align-items:center}
 .nav-dd-sep{height:1px;background:var(--border);margin:.4rem 0}
 /* MEGA MENU */
 .nav-item-mega{position:static}
-.nav-item-mega:hover .mega-menu{display:block}
 .mega-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,8,5,0.99);backdrop-filter:blur(28px);border-bottom:1px solid var(--border);border-top:1px solid rgba(201,168,76,.15);z-index:299;padding:1.75rem 0 1.5rem;box-shadow:0 16px 56px rgba(0,0,0,.75);animation:megaFade .2s ease}
+.mega-menu.open{display:block}
 @keyframes megaFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .mega-inner{max-width:1240px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(7,1fr);gap:0}
 .mega-col{padding:.2rem 1rem .6rem;border-right:1px solid rgba(201,168,76,.07)}
@@ -1194,6 +1194,20 @@ function filterHome(btn,cat){
   document.querySelectorAll('.cats-strip .cat-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
 }
+
+// Mega menu hover — gecikmeli kapanma ile boşluk sorununu çözer
+(function(){
+  const navItem = document.querySelector('.nav-item-mega');
+  const menu = document.querySelector('.mega-menu');
+  if(!navItem || !menu) return;
+  let closeTimer;
+  const open = () => { clearTimeout(closeTimer); menu.classList.add('open'); };
+  const close = () => { closeTimer = setTimeout(() => menu.classList.remove('open'), 150); };
+  navItem.addEventListener('mouseenter', open);
+  navItem.addEventListener('mouseleave', close);
+  menu.addEventListener('mouseenter', open);
+  menu.addEventListener('mouseleave', close);
+})();
 
 // Sayfa yüklendiğinde makaleleri çek
 loadArticles();
