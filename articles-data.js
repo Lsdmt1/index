@@ -115,7 +115,8 @@ const ARTICLES_DATA = [
 <p>Harita 12 eve bölünmüştür. Her gezegen bir evi ziyaret eder ve o alan üzerinde etkisini bırakır.</p>
 <p class="article-closing">Harita, kaderin ta kendisi değildir. Kendini tanımak için en eski aynalardan biri.</p>`,
     sourceList:['Liz Greene — Satürn: Yeni Bir Bakış','Dane Rudhyar — Astroloji Kişiliğinin Yeniden Yorumlanması','Howard Sasportas — 12 Ev','Stephen Arroyo — Astroloji, Psikoloji ve Dört Element']
-,{
+  },
+  {
     id:'akis-hali', cat:'zihin', subcat:'psikoloji',
     title:'Akış Hali: Nörobiyoloji ve Kadim Bilgeliğin Kesiştiği Tepe Deneyim',
     titlePlain:'Akış Hali:',
