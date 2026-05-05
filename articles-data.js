@@ -202,5 +202,5 @@ const ARTICLES_DATA = [
       'Arne Dietrich — Transient Hypofrontality as a Mechanism for the Psychological Effects of Exercise',
       'Flow Research Collective — State of Flow Report 2023'
     ]
-  } 
-]
+  }
+];
