@@ -419,27 +419,27 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-main" onclick="showArticle('anice')">
+    <div class="hero-main" id="hero-main-link">
       <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="">
       <div class="hero-content">
-        <div class="tag">☯ Budizm & Zen</div>
-        <h2 class="hero-title">Aniçe: Her şeyin<br><em>geçiciliğini kucaklamak</em></h2>
-        <p class="hero-meta">12 dk okuma · 14 kaynak kitap</p>
+        <div class="tag" id="hero-main-tag">✦ Öne Çıkan</div>
+        <h2 class="hero-title" id="hero-main-title">Yükleniyor…</h2>
+        <p class="hero-meta" id="hero-main-meta"></p>
       </div>
     </div>
-    <div class="hero-side">
-      <div class="hero-card" onclick="showArticle('golge')">
+    <div class="hero-side" id="hero-side-container">
+      <div class="hero-card">
         <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag">🧠 Psikoloji</div>
-          <div class="hero-card-title">Jung'un Gölge Arketipi</div>
+          <div class="tag"></div>
+          <div class="hero-card-title"></div>
         </div>
       </div>
-      <div class="hero-card" onclick="showArticle('hermes')">
+      <div class="hero-card">
         <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="">
         <div class="hero-card-content">
-          <div class="tag">🔮 Ezoterizm</div>
-          <div class="hero-card-title">Hermes Trismegistus'un Sırrı</div>
+          <div class="tag"></div>
+          <div class="hero-card-title"></div>
         </div>
       </div>
     </div>
@@ -463,61 +463,8 @@ footer{border-top:1px solid var(--border);margin-top:5rem;padding:3rem 2rem;text
       <div class="section-title">Son Yazılar</div>
       <span class="see-all" onclick="showPage('search')">Tümünü Gör →</span>
     </div>
-    <div class="grid-3">
-      <div class="card" onclick="showArticle('anice')">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">☯ Budizm</span>
-          <div class="card-title">Aniçe: Her Şeyin Geçiciliğini Kucaklamak</div>
-          <div class="card-desc">Buda'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.</div>
-          <div class="card-footer"><span>12 dk okuma</span><span>·</span><span>14 kaynak</span></div>
-        </div>
-      </div>
-      <div class="card" onclick="showArticle('golge')">
-        <img src="https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">🧠 Psikoloji</span>
-          <div class="card-title">Jung'un Gölge Arketipi: Kendi Karanlığınla Yüzleşmek</div>
-          <div class="card-desc">Carl Gustav Jung'un gölge çalışmasının dönüştürücü gücü ve kolektif bilinçdışı.</div>
-          <div class="card-footer"><span>10 dk okuma</span><span>·</span><span>9 kaynak</span></div>
-        </div>
-      </div>
-      <div class="card" onclick="showArticle('hermes')">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">🔮 Ezoterizm</span>
-          <div class="card-title">Hermes Trismegistus ve Kadim Bilgeliğin Dili</div>
-          <div class="card-desc">Hermetik felsefenin kökleri ve "Yukarıda ne varsa aşağıda da odur" ilkesinin derinlikleri.</div>
-          <div class="card-footer"><span>15 dk okuma</span><span>·</span><span>11 kaynak</span></div>
-        </div>
-      </div>
-      <div class="card" onclick="showArticle('nlp')">
-        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">🌿 Bütüncül Sağlık</span>
-          <div class="card-title">NLP ile Zihin Programlama: Kökler ve Pratik</div>
-          <div class="card-desc">Nöro-linguistik programlamanın temelleri ve günlük yaşamda dönüştürücü etkileri.</div>
-          <div class="card-footer"><span>8 dk okuma</span><span>·</span><span>7 kaynak</span></div>
-        </div>
-      </div>
-      <div class="card" onclick="showArticle('saman')">
-        <img src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">🥁 Şamanizm</span>
-          <div class="card-title">Şaman Yolculuğu: Üç Dünya Kozmolojisi</div>
-          <div class="card-desc">Alt dünya, orta dünya, üst dünya ve modern insanın bu antik bilgelikle bağı.</div>
-          <div class="card-footer"><span>11 dk okuma</span><span>·</span><span>8 kaynak</span></div>
-        </div>
-      </div>
-      <div class="card" onclick="showArticle('astroloji')">
-        <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=600&q=80" alt="">
-        <div class="card-body">
-          <span class="card-tag">⭐ Astroloji</span>
-          <div class="card-title">Doğum Haritası: Gökyüzünün Sana Anlattıkları</div>
-          <div class="card-desc">Natal harita okuma temelleri ve gezegenlerin kişilik üzerindeki sembolik etkileri.</div>
-          <div class="card-footer"><span>9 dk okuma</span><span>·</span><span>6 kaynak</span></div>
-        </div>
-      </div>
+    <div class="grid-3" id="home-latest-grid">
+      <div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--muted);font-family:var(--serif)">Yazılar yükleniyor…</div>
     </div>
   </div>
 
@@ -930,157 +877,80 @@ const CATEGORIES = {
   }
 };
 
-// Article index
-const ARTICLES = {
-  anice:{
-    id:'anice',cat:'maneviyat',subcat:'budizm',
-    title:'Aniçe: Her Şeyin Geçiciliğini Kucaklamak',
-    titleEm:'geçiciliğini kucaklamak',
-    titlePlain:'Aniçe: Her Şeyin',
-    tag:'☯ Budizm & Zen',read:'12 dk',sources:14,
-    img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80',
-    desc:'Buda\'nın en temel öğretilerinden biri olan geçicilik kavramı ve modern hayatta uygulaması.',
-    body:`
-      <p class="article-lead">Sabah kahveni içerken masanın üzerindeki buharın yükselişini izledin mi hiç? O ince beyaz kıvrım — doğar, yükselir, dağılır. Saniyeler içinde. Ne kadar direnirsek direnelim, buhar gider.</p>
-      <p>Budizm buna bir isim koymuştur: <strong>Aniçe</strong>. Pali dilinde "geçicilik" anlamına gelir. Buda'nın öğretilerinin tam merkezinde durur — acının neden var olduğunu, neden tutunduğumuzu ve neden bırakmayı öğrenmemiz gerektiğini açıklayan temel gerçek.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Geçicilik neden bu kadar zor?</h2>
-      <p>İnsan zihni, doğası gereği kalıcılık arar. Güzel bir anı dondurmak, sevdiğimiz insanları hep yanımızda tutmak istiyoruz. <strong>Thich Nhat Hanh</strong> bunu şöyle açıklar: tutunma, bir şeyin gerçekte ne olduğunu görmemizi engeller.</p>
-      <blockquote><p>"Her şey geçicidir. Bunu anlayan kişi acının üzerinden geçer."</p><cite>— Dhammapada</cite></blockquote>
-      <h2 class="article-h2">Bırakmak, kaybetmek değildir</h2>
-      <p>Aniçe öğretisi şunu söyler: bir şeyin geçici olduğunu kabul etmek, onu daha tam yaşamamızı sağlar. Solmakta olan gül, tam da o yüzden güzeldir. <strong>Osho'nun</strong> dediği gibi: gerçek aşk serbest bırakır.</p>
-      <p class="article-closing">Sabah kahvenizdeki buharı bir daha izlediğinizde, belki bu kez ona direnmek yerine yükselişini takip edersiniz. Doğar. Yükselir. Dağılır.</p>
-    `,
-    sourceList:['Dhammapada (Buda\'nın sözleri, MÖ 3. yüzyıl)','Thich Nhat Hanh — Farkındalığın Mucizesi','Dalai Lama — Yeni Binyılın Değerleri','Osho — Farkındalık: Dengeli Yaşamanın Anahtarı','Alan W. Watts — Zen Yolu']
-  },
-  golge:{
-    id:'golge',cat:'zihin',subcat:'psikoloji',
-    title:'Jung\'un Gölge Arketipi: Kendi Karanlığınla Yüzleşmek',
-    titleEm:'Kendi Karanlığınla Yüzleşmek',
-    titlePlain:'Jung\'un Gölge Arketipi:',
-    tag:'🧠 Derinlik Psikolojisi',read:'10 dk',sources:9,
-    img:'https://images.unsplash.com/photo-1474540412665-1cdae210ae6b?w=1200&q=80',
-    desc:'Carl Gustav Jung\'un gölge çalışmasının dönüştürücü gücü ve kolektif bilinçdışı üzerine.',
-    body:`
-      <p class="article-lead">Her insanın içinde bir gölge yaşar. Bastırdığımız öfke, inkâr ettiğimiz kıskançlık, kabul edemediğimiz arzular — hepsi orada, karanlığın içinde bekler.</p>
-      <p><strong>Carl Gustav Jung</strong>, bu karanlık bölgeyi "gölge" olarak adlandırdı. Ego'nun dışında kalan, bilinçdışına itilmiş tüm içeriklerin toplamıdır gölge. Ve Jung'a göre, gölgeyle yüzleşmemek onu daha güçlü kılar.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Gölge neden önemli?</h2>
-      <p>Jung şöyle söyler: "En büyük kötülük, gölgeden habersiz olmaktır." Bizi en çok rahatsız eden insanlar, çoğunlukla bizim inkâr ettiğimiz nitelikleri taşıyanlardır. Bu yansıtma mekanizması, gölgenin bize gösterdiği aynalardır.</p>
-      <blockquote><p>"Birinin gölgesi olmadığı zaman, ışığı da olmaz."</p><cite>— Carl Gustav Jung</cite></blockquote>
-      <h2 class="article-h2">Gölge çalışması nasıl yapılır?</h2>
-      <p>Gölge çalışması, karanlığı yok etmek değil, onunla diyaloğa girmektir. <strong>Robert A. Johnson</strong>'ın önerdiği yöntemle: sizi en çok rahatsız eden kişilikleri listeleyin. O özellikleri kendinizde aramaya başlayın. Çoğunlukla bastırdığınız şeyi bulursunuz.</p>
-      <p class="article-closing">Gölgeyi kucaklamak, tüm karanlığı kabul etmek demek değildir. Onu tanımak, bütünleşmek ve özgürleşmek demektir.</p>
-    `,
-    sourceList:['Carl Gustav Jung — Psikoloji ve Simya','Robert A. Johnson — Gölgemizi Yemek','Marie-Louise von Franz — Gölge ve Kötülük','James Hollis — Karanlıkta Işık Aramak','Marie-Louise von Franz — Psikoloji ve Din']
-  },
-  hermes:{
-    id:'hermes',cat:'ezoterizm',subcat:'okultizm',
-    title:'Hermes Trismegistus ve Kadim Bilgeliğin Dili',
-    titleEm:'Kadim Bilgeliğin Dili',
-    titlePlain:'Hermes Trismegistus ve',
-    tag:'🔮 Okültizm & Hermetizm',read:'15 dk',sources:11,
-    img:'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80',
-    desc:'Hermetik felsefenin kökleri ve "Yukarıda ne varsa aşağıda da odur" ilkesinin derinlikleri.',
-    body:`
-      <p class="article-lead">"Yukarıda ne varsa, aşağıda da odur. Aşağıda ne varsa, yukarıda da." Bu cümle, binlerce yıl önce yazılmış Zümrüt Tablet'ten gelmektedir. Ve hâlâ modern fizikçileri, filozofları ve spiritüel araştırmacıları etkilemeye devam etmektedir.</p>
-      <p><strong>Hermes Trismegistus</strong> — "Üç kez büyük Hermes" — efsanevi bir figürdür. Antik Mısır geleneğinde Thoth ile Yunan tanrısı Hermes'in bileşimi. Ona atfedilen yazılar, batı ezoterik geleneğinin temel taşlarını oluşturur.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Yedi Hermetik İlke</h2>
-      <p>Hermetizm, evrenin işleyişini yedi temel ilkeyle açıklar: Zihinsellik, Yazışma, Titreşim, Kutupsallık, Ritim, Nedensellik ve Cinsiyet. Bu ilkelerin her biri, hem makrokozmos hem de mikrokozmos için geçerlidir.</p>
-      <blockquote><p>"Zihin her şeydir; evren zihinseldir."</p><cite>— Kybalion</cite></blockquote>
-      <h2 class="article-h2">Modern dünyada Hermetizm</h2>
-      <p>Rönesans simyacıları, Aydınlanma düşünürleri ve hatta bazı kuantum fizikçileri Hermetik metinlerden ilham almıştır. "Gözlemci etkisi" ile "Yazışma İlkesi" arasındaki paralellik tesadüf olmayabilir.</p>
-      <p class="article-closing">Zümrüt Tablet'in son satırı şöyle biter: "Güneş onun babası, Ay onun annesi, Rüzgâr onu taşıdı, Toprak onu besledi." Evrenin ritmi hâlâ aynı.</p>
-    `,
-    sourceList:['Kybalion — Three Initiates','The Emerald Tablet — Dennis William Hauck','Hermetica — Brian Copenhaver','Frances Yates — Giordano Bruno ve Hermetik Gelenek','Manly P. Hall — Tüm Çağların Gizli Öğretileri']
-  },
-  nlp:{
-    id:'nlp',cat:'saglik',subcat:'nlp',
-    title:'NLP ile Zihin Programlama: Kökler ve Pratik',
-    titleEm:'Kökler ve Pratik',
-    titlePlain:'NLP ile Zihin Programlama:',
-    tag:'🧠 NLP',read:'8 dk',sources:7,
-    img:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80',
-    desc:'Nöro-linguistik programlamanın temelleri ve günlük yaşamda dönüştürücü etkileri.',
-    body:`
-      <p class="article-lead">Dilimiz gerçekliği sadece anlatmaz — aynı zamanda inşa eder. NLP'nin temel iddiası budur: düşünce kalıplarımızı ve dil kullanımımızı değiştirerek deneyimlerimizi dönüştürebiliriz.</p>
-      <p><strong>Richard Bandler</strong> ve <strong>John Grinder</strong> tarafından 1970'lerde geliştirilen NLP, başarılı terapistlerin ve iletişimcilerin kullandığı kalıpları modellemeye dayanır. Fritz Perls, Virginia Satir ve Milton Erickson başlıca ilham kaynaklarıydı.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Harita, arazi değildir</h2>
-      <p>NLP'nin en temel varsayımı şudur: Her insanın gerçekliğin farklı bir "haritası" vardır. Ve haritamız, arazinin kendisi değildir. Sorunlar genellikle haritadaki kısıtlamalardan kaynaklanır, gerçekliğin kendisinden değil.</p>
-      <blockquote><p>"İnsanlar kırık değildir. Kullandıkları kalıplar değiştirilebilir."</p><cite>— Richard Bandler</cite></blockquote>
-      <h2 class="article-h2">Temel NLP Tekniklerinden Biri: Yeniden Çerçeveleme</h2>
-      <p>Aynı olayı farklı bir çerçevede görmek, deneyimi kökten değiştirir. "Başarısız oldum" yerine "Neyin işe yaramadığını öğrendim" demek sadece pozitif düşünce değil — beynin farklı nöral yollar kullanmasını sağlar.</p>
-      <p class="article-closing">Dil bir araçtır. Ama hangi aracı nasıl kullandığımız, inşa ettiğimiz yapıyı belirler.</p>
-    `,
-    sourceList:['Richard Bandler & John Grinder — Kurbağalardan Prenslere','Steve Andreas & Charles Faulkner — NLP: Yeni Teknoloji','Robert Dilts — Değişim İçin Stratejiler','Joseph O\'Connor & John Seymour — NLP\'ye Giriş','Tony Robbins — Sınırsız Güç']
-  },
-  saman:{
-    id:'saman',cat:'maneviyat',subcat:'samanizm',
-    title:'Şaman Yolculuğu: Üç Dünya Kozmolojisi',
-    titleEm:'Üç Dünya Kozmolojisi',
-    titlePlain:'Şaman Yolculuğu:',
-    tag:'🥁 Şamanizm',read:'11 dk',sources:8,
-    img:'https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=1200&q=80',
-    desc:'Alt dünya, orta dünya, üst dünya ve modern insanın bu antik bilgelikle bağı.',
-    body:`
-      <p class="article-lead">Davulun monoton ritmi başlar. Şaman gözlerini kapatır ve bir yolculuğa çıkar — bu dünyayı değil, başka bir gerçekliğin katmanlarını ziyaret etmek için.</p>
-      <p>Şamanizm, insanlığın bilinen en eski spiritüel geleneğidir. Sibirya'dan Güney Amerika'ya, Afrika'dan Kuzey Amerika yerlilerine kadar farklı kültürlerde benzer kozmoloji görülür: evren üç katmandan oluşur.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Üç Dünya</h2>
-      <p><strong>Alt Dünya</strong>, ataların ruhlarının ve hayvan rehberlerin bulunduğu yerdir. Derin bilgeliğin ve köklerin diyarı. <strong>Orta Dünya</strong>, yaşadığımız gerçekliktir — ama ruhsal katmanıyla birlikte. <strong>Üst Dünya</strong> ise öğretmen ruhların ve kozmik bilgeliğin mekânıdır.</p>
-      <blockquote><p>"Şaman, görünmeyen dünyaların avcısıdır."</p><cite>— Michael Harner, Şamanın Yolu</cite></blockquote>
-      <h2 class="article-h2">Modern Şamanizm</h2>
-      <p><strong>Sandra Ingerman</strong> ve <strong>Michael Harner</strong>'ın çalışmaları sayesinde çekirdek şamanizm, modern insana uyarlandı. Ruh geri getirme, güç hayvanı bulmak ve ata şifası gibi pratikler artık batı dünyasında da uygulanıyor.</p>
-      <p class="article-closing">Davul hâlâ çalıyor. Ve insanlık, başlangıcından bu yana aynı kapıyı aramaya devam ediyor.</p>
-    `,
-    sourceList:['Michael Harner — Şamanın Yolu','Sandra Ingerman — Ruh Geri Getirme','Mircea Eliade — Şamanizm: Arkaik Vecd Teknikleri','Tom Cowan — Şamanizm: Ruhsal Şifaya Giden Yol','Alberto Villoldo — Şaman, Hekim, Bilge']
-  },
-  astroloji:{
-    id:'astroloji',cat:'ezoterizm',subcat:'astroloji',
-    title:'Doğum Haritası: Gökyüzünün Sana Anlattıkları',
-    titleEm:'Gökyüzünün Sana Anlattıkları',
-    titlePlain:'Doğum Haritası:',
-    tag:'⭐ Astroloji',read:'9 dk',sources:6,
-    img:'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=1200&q=80',
-    desc:'Natal harita okuma temelleri ve gezegenlerin kişilik üzerindeki sembolik etkileri.',
-    body:`
-      <p class="article-lead">Doğduğunuz an, gökyüzündeki bir fotoğraf çekilir. Gezegenlerin o anki konumu, astrologlara göre kişiliğinizin, potansiyelinizin ve yaşam temalarınızın bir haritasını sunar.</p>
-      <p>Batı astrolojisi, <strong>Mezopotamya</strong> geleneğinden Helenistik döneme, oradan Rönesans'a uzanan 4.000 yıllık bir birikimin ürünüdür. Modern psikolojik astroloji ise <strong>Carl Jung</strong>'un arketip teorisiyle zenginleşmiştir.</p>
-      <div class="article-sep">· · ·</div>
-      <h2 class="article-h2">Üç Temel Bileşen</h2>
-      <p><strong>Güneş burcu</strong>, temel kimliği ve yaşam amacını gösterir. <strong>Ay burcu</strong>, duygusal dünyayı ve iç ihtiyaçları temsil eder. <strong>Yükselen burç</strong> (Asendan) ise dünyaya nasıl göründüğünüzü — maskenizi — anlatır.</p>
-      <blockquote><p>"Yıldızlar eğilimi gösterir, zorunluluğu değil."</p><cite>— Dane Rudhyar</cite></blockquote>
-      <h2 class="article-h2">Evler ve Gezegenler</h2>
-      <p>Harita 12 eve bölünmüştür: kariyer, ilişkiler, sağlık, para, ruhsallık… Her gezegen bir evi "ziyaret eder" ve o alan üzerinde etkisini bırakır. <strong>Satürn</strong>'ün 7. evde olması ilişkilerde disiplin ve sorumluluk temalarını öne çıkarır.</p>
-      <p class="article-closing">Harita, kaderin ta kendisi değildir. Bir dil, bir semboller sistemi. Kendini tanımak için kullanılabilecek en eski aynalardan biri.</p>
-    `,
-    sourceList:['Liz Greene — Satürn: Yeni Bir Bakış','Dane Rudhyar — Astroloji Kişiliğinin Yeniden Yorumlanması','Howard Sasportas — 12 Ev','Isabel Hickey — Astroloji: Kozmik Bilim','Stephen Arroyo — Astroloji, Psikoloji ve Dört Element']
-  }
-};
+// ARTICLES ve CAT_ARTICLES — articles.json'dan yüklenir
+let ARTICLES = {};
+let CAT_ARTICLES = {};
 
-// Articles by category/subcat
-const CAT_ARTICLES = {
-  maneviyat:{
-    tumu:['anice','saman'],
-    budizm:['anice'],
-    samanizm:['saman'],
-    hinduizm:[],tasavvuf:[],kabala:[],gnostisizm:[]
-  },
-  saglik:{tumu:['nlp'],nlp:['nlp'],bilincsalti:[],travma:[],bagimlilik:[],norobilim:[],
-    'pozitif-psikoloji':[],golge:[],'icsel-cocuk':[],'duygusal-zeka':[],stres:[],psikosomatik:[],
-    meditasyon:[],mindfulness:[],enerji:[],chakra:[],kundalini:[],'spirituel-uyanis':[],sufizm:[],
-    'dogu-ogretileri':[],samanizm:[],mantra:[],reiki:[],bioenerji:[],frekans:[],'ses-terapisi':[],
-    kristaller:[],aura:[],'kuantum-sifa':[],fitoterapi:[],aromaterapi:[],homeopati:[],ayurveda:[],
-    'cin-tibbi':[],detoks:[],oruc:[],takviyeler:[],beslenme:[],'fonksiyonel-tip':[],vegan:[],keto:[],
-    sindirim:[],hormon:[],mineral:[],yoga:[],nefes:[],somatik:[],pilates:[],hareket:[],
-    ruyalar:[],arketipler:[],astroloji:[]},
-  zihin:{tumu:['golge'],psikoloji:['golge'],ruyalar:[],kuantum:[],metafizik:[],parapsikoloji:[]},
-  ezoterizm:{tumu:['hermes','astroloji'],okultizm:['hermes'],astroloji:['astroloji'],tarot:[],numeroloji:[],sembolizm:[]},
-  tarih:{tumu:[],felsefe:[],antik:[],mitoloji:[],edebiyat:[]},
-  donusum:{tumu:[],anlam:[],bereket:[],iliskiler:[],gelisim:[]}
-};
+function buildCatArticles(articlesArr) {
+  const ca = {};
+  // Her kategori için boş yapı oluştur
+  Object.keys(CATEGORIES).forEach(catId => {
+    ca[catId] = { tumu: [] };
+    const cat = CATEGORIES[catId];
+    const subcats = cat.subcats || [];
+    subcats.forEach(s => { ca[catId][s.id] = []; });
+  });
+  // Makaleleri yerleştir
+  articlesArr.forEach(a => {
+    if (!ca[a.cat]) ca[a.cat] = { tumu: [] };
+    if (!ca[a.cat][a.subcat]) ca[a.cat][a.subcat] = [];
+    ca[a.cat][a.subcat].push(a.id);
+    if (!ca[a.cat].tumu.includes(a.id)) ca[a.cat].tumu.push(a.id);
+  });
+  return ca;
+}
+
+async function loadArticles() {
+  try {
+    const res = await fetch('articles.json');
+    const arr = await res.json();
+    // Objeye çevir
+    arr.forEach(a => { ARTICLES[a.id] = a; });
+    CAT_ARTICLES = buildCatArticles(arr);
+    // Site hazır — hero kartlarını ve son yazıları render et
+    renderHomeCards();
+  } catch(e) {
+    console.error('articles.json yüklenemedi:', e);
+  }
+}
+
+function renderHomeCards() {
+  const allArr = Object.values(ARTICLES);
+
+  // Son yazılar grid
+  const grid = document.getElementById('home-latest-grid');
+  if (grid) grid.innerHTML = allArr.slice(0,6).map(a => articleCard(a)).join('') || '<div style="color:var(--muted);text-align:center;padding:2rem;font-family:var(--serif)">Henüz makale yok.</div>';
+
+  // Hero ana kart
+  if (allArr.length > 0) {
+    const first = allArr[0];
+    const heroMain = document.getElementById('hero-main-link');
+    if (heroMain) {
+      heroMain.onclick = () => showArticle(first.id);
+      const img = heroMain.querySelector('img');
+      if (img) img.src = first.img;
+      const tag = document.getElementById('hero-main-tag');
+      if (tag) tag.textContent = first.tag;
+      const title = document.getElementById('hero-main-title');
+      if (title) title.innerHTML = first.titlePlain + '<br><em>' + first.titleEm + '</em>';
+      const meta = document.getElementById('hero-main-meta');
+      if (meta) meta.textContent = first.read + ' okuma · ' + first.sources + ' kaynak kitap';
+    }
+  }
+
+  // Hero yan kartlar
+  const sideCards = document.querySelectorAll('.hero-card');
+  allArr.slice(1,3).forEach((a,i) => {
+    if (!sideCards[i]) return;
+    sideCards[i].onclick = () => showArticle(a.id);
+    const img = sideCards[i].querySelector('img');
+    const tag = sideCards[i].querySelector('.tag');
+    const title = sideCards[i].querySelector('.hero-card-title');
+    if (img) img.src = a.img;
+    if (tag) tag.textContent = a.tag;
+    if (title) title.textContent = a.title;
+  });
+}
 
 // ══════════════════════════════════════════════════════
 // NAVIGATION
@@ -1324,6 +1194,9 @@ function filterHome(btn,cat){
   document.querySelectorAll('.cats-strip .cat-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
 }
+
+// Sayfa yüklendiğinde makaleleri çek
+loadArticles();
 </script>
 </body>
 </html>
