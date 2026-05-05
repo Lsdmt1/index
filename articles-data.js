@@ -203,4 +203,4 @@ const ARTICLES_DATA = [
       'Flow Research Collective — State of Flow Report 2023'
     ]
   } 
-];
+]
